@@ -1,146 +1,145 @@
 ---
-eip: 1
-title: EIP Purpose and Guidelines
+ensip: D10-001
+title: ENSIP Purpose and Guidelines
 status: Living
 type: Meta
-author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, et al.
-created: 2015-10-27
+author: Prem Makeig (premm.eth) <premm@unruggable.com>
+created: 2024-4-26
 ---
 
-## What is an EIP?
+## What is an ENSIP?
 
-EIP stands for Ethereum Improvement Proposal. An EIP is a design document providing information to the Ethereum community, or describing a new feature for Ethereum or its processes or environment. The EIP should provide a concise technical specification of the feature and a rationale for the feature. The EIP author is responsible for building consensus within the community and documenting dissenting opinions.
+ENSIP stands for Ethereum Name Service Improvement Proposal. An ENSIP is a design document providing information to the ENS and the broader Ethereum and blockchain community, describing a new feature or a change to the ENS protocol or a new standard to be used by the ENS community. The ENSIP should provide a concise technical specification of the feature, change, or standard and a rationale for the said feature, change, or standard. The ENSIP author is responsible for building consensus within the community and documenting dissenting opinions.
 
-## EIP Rationale
+## ENSIP Rationale
 
-We intend EIPs to be the primary mechanisms for proposing new features, for collecting community technical input on an issue, and for documenting the design decisions that have gone into Ethereum. Because the EIPs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
+In 2016, a numbering system was set up, similar to the US Patent system, where final published ENSIPs have consecutive ascending numbers such as 1, 2, 3, 4, and so on. This system differs from that of EIPs, where the final EIP numbers remain the same as their draft numbers, often resulting in significant gaps between the numbering of finalized EIPs.
 
-For Ethereum implementers, EIPs are a convenient way to track the progress of their implementation. Ideally each implementation maintainer would list the EIPs that they have implemented. This will give end users a convenient way to know the current status of a given implementation or library.
+However, no system was set up for draft ENSIPs, leading to difficulties for authors trying to advance their drafts without a numbering system and formal process in place. This ENSIP aims to establish a system similar to that of EIPs that includes a numbering system for drafts as well as various stages for ENSIPs such as draft, review, last call, and final.
 
-## EIP Types
+An upgraded ENSIP process will allow for proposing new features, changes, and standards, gathering community technical input on issues, and documenting the design decisions involved. Maintained as text files in a versioned repository, the revision history of ENSIPs serves as the historical record of each proposal.
 
-There are three types of EIP:
+For ENS implementers, ENSIPs provide a convenient way to track the progress of their implementations. Ideally, each implementation maintainer would list the ENSIPs they have implemented, offering end users a convenient method to check the current status of a given implementation or library.
 
-- A **Standards Track EIP** describes any change that affects most or all Ethereum implementations, such as—a change to the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Ethereum. Standards Track EIPs consist of three parts—a design document, an implementation, and (if warranted) an update to the [formal specification](https://github.com/ethereum/yellowpaper). Furthermore, Standards Track EIPs can be broken down into the following categories:
-  - **Core**: improvements requiring a consensus fork (e.g. [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), as well as changes that are not necessarily consensus critical but may be relevant to [“core dev” discussions](https://github.com/ethereum/pm) (for example, [EIP-90], and the miner/node strategy changes 2, 3, and 4 of [EIP-86](./eip-86.md)).
-  - **Networking**: includes improvements around [devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) and [Light Ethereum Subprotocol](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node), as well as proposed improvements to network protocol specifications of [whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309) and [swarm](https://github.com/ethereum/go-ethereum/pull/2959).
-  - **Interface**: includes improvements around language-level standards like method names ([EIP-6](./eip-6.md)) and [contract ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html).
-  - **ERC**: application-level standards and conventions, including contract standards such as token standards ([ERC-20](./eip-20.md)), name registries ([ERC-137](./eip-137.md)), URI schemes, library/package formats, and wallet formats.
+## ENSIP Types
 
-- A **Meta EIP** describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.
+There are three types of ENSIPs:
 
-- An **Informational EIP** describes an Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.
+- A **Standards Track ENSIP** describes any change that affects most or all ENS implementations, such as changes to the ENS protocol, including the way an ENS name is resolved, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using ENS. Standards Track ENSIPs consist of three parts—a design document, an implementation, and (if warranted) an update to the formal protocol specification. Furthermore, Standards Track ENSIPs can be broken down into the following categories:
 
-It is highly recommended that a single EIP contain a single key proposal or new idea. The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+  - **Core**: improvements requiring a change to the way that ENS names are resolved by clients, standards that affect the validity of ENS name character combinations, or any standard that would reasonably affect the everyday use of ENS names by users and clients.
+  - **ERC**: application-level standards and conventions, including contract standards such as resolver standards, name registries, URI schemes, library/package formats, and wallet integrations.
 
-An EIP must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
+- A **Meta ENSIP** describes a process surrounding ENS or proposes a change to (or an event in) a process. Process ENSIPs are like Standards Track ENSIPs but apply to areas other than the ENS protocol itself. They may propose an implementation, but not anything that changes the way ENS names are resolved, for example; they often require community consensus; unlike Informational ENSIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in ENS development. Any meta-ENSIP is also considered a Process ENSIP.
 
-### Special requirements for Core EIPs
+- An **Informational ENSIP** describes an ENS protocol design issue, or provides general guidelines or information to the ENS community, but does not propose a new feature or a change to the protocol. Informational ENSIPs do not necessarily represent ENS community consensus or a recommendation, so users and implementers are free to ignore Informational ENSIPs or follow their advice.
 
-If a **Core** EIP mentions or proposes changes to the EVM (Ethereum Virtual Machine), it should refer to the instructions by their mnemonics and define the opcodes of those mnemonics at least once. A preferred way is the following:
+It is highly recommended that a single ENSIP contain a single key proposal or new idea. The more focused the ENSIP, the more successful it tends to be. A change to one client doesn't require an ENSIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
 
-```
-REVERT (0xfe)
-```
+An ENSIP must meet certain minimum criteria. It must provide a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
 
-## EIP Work Flow
+### Special requirements for Core ENSIPs
 
-### Shepherding an EIP
+If a **Core ENSIP** mentions or proposes changes to the ENS protocol, it should cite a previous ENSIP whenever possible, in order to root the proposal in an existing aspect of the protocol.
 
-Parties involved in the process are you, the champion or *EIP author*, the [*EIP editors*](#eip-editors), and the [*Ethereum Core Developers*](https://github.com/ethereum/pm).
+## ENSIP Work Flow
 
-Before you begin writing a formal EIP, you should vet your idea. Ask the Ethereum community first if an idea is original to avoid wasting time on something that will be rejected based on prior research. It is thus recommended to open a discussion thread on [the Ethereum Magicians forum](https://ethereum-magicians.org/) to do this.
+### Shepherding an ENSIP
 
-Once the idea has been vetted, your next responsibility will be to present (by means of an EIP) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give feedback on the aforementioned channels. You should try and gauge whether the interest in your EIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core EIP will be much greater than for an ERC and the EIP will need sufficient interest from the Ethereum client teams. Negative community feedback will be taken into consideration and may prevent your EIP from moving past the Draft stage.
+Parties involved in the process are you, the champion or ENSIP author, the ENSIP editors, and the ENS DAO.
+
+Before you begin writing a formal ENSIP, you should vet your idea. Ask the ENS community first if an idea is original to avoid spending time on something that will be rejected based on prior research. It is thus recommended to open a discussion thread on the ENS DAO forum to do this.
+
+Once the idea has been vetted, your next responsibility will be to present (by means of an ENSIP Draft) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give feedback on the aforementioned channels. You should try and gauge whether the interest in your ENSIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core ENSIP will be much greater than for an ERC, and the ENSIP will need sufficient interest from the Ethereum client teams. Negative community feedback will be taken into consideration and may prevent your ENSIP from moving past the Draft stage.
+
 
 ### Core EIPs
 
-For Core EIPs, given that they require client implementations to be considered **Final** (see "EIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your EIP.
+For Core ENSIPs, given that they may require upgrades to smart contracts, gateways, and client implementations to be considered Final (see "ENSIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your ENSIP.
 
-The best way to get client implementers to review your EIP is to present it on an AllCoreDevs call. You can request to do so by posting a comment linking your EIP on an [AllCoreDevs agenda GitHub Issue](https://github.com/ethereum/pm/issues).  
+The best way to get feedback from ENS developers is to present the ENSIP at the ENS Ecosystem call. The ENS Ecosystem call serves as a way for developers in the ENS community to get feedback on their projects, as well as discuss improvements to ENS, including the core ENS protocol.
 
-The AllCoreDevs call serves as a way for client implementers to do three things. First, to discuss the technical merits of EIPs. Second, to gauge what other clients will be implementing. Third, to coordinate EIP implementation for network upgrades.
+These calls may result in a "rough consensus" around the merits of an ENSIP, and may serve to direct authors of ENSIPs to further consult relevant parties who may be impacted, for example, wallets, or well-known dapps that implement the ENS protocol.
 
-These calls generally result in a "rough consensus" around what EIPs should be implemented. This "rough consensus" rests on the assumptions that EIPs are not contentious enough to cause a network split and that they are technically sound.
+:warning: The ENSIPs process and ENS Ecosystem call were not designed to address contentious non-technical issues, but, due to the lack of other ways to address these, often end up entangled in them. This puts the burden on client implementers to try and gauge community sentiment, which hinders the technical coordination function of ENSIPs and ENS Ecosystem calls. If you are shepherding an ENSIP, you can make the process of building community consensus easier by making sure that the ENS DAO forum thread for your ENSIP includes or links to as much of the community discussion as possible and that various stakeholders are well-represented.
 
-:warning: The EIPs process and AllCoreDevs call were not designed to address contentious non-technical issues, but, due to the lack of other ways to address these, often end up entangled in them. This puts the burden on client implementers to try and gauge community sentiment, which hinders the technical coordination function of EIPs and AllCoreDevs calls. If you are shepherding an EIP, you can make the process of building community consensus easier by making sure that [the Ethereum Magicians forum](https://ethereum-magicians.org/) thread for your EIP includes or links to as much of the community discussion as possible and that various stakeholders are well-represented.
 
-*In short, your role as the champion is to write the EIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
+*In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
 
-### EIP Process
+### ENSIP Process
 
 The following is the standardization process for all EIPs in all tracks:
 
-![EIP Status Diagram](../assets/eip-1/EIP-process-update.jpg)
+![ENSIP Status Diagram](EIP-process-update.jpg)
 
-**Idea** - An idea that is pre-draft. This is not tracked within the EIP Repository.
+**Idea** - An idea that is pre-draft. This is not tracked within the ENSIP Repository.
 
-**Draft** - The first formally tracked stage of an EIP in development. An EIP is merged by an EIP Editor into the EIP repository when properly formatted.
+**Draft** - The first formally tracked stage of an ENSIP in development. An ENSIP is merged by an ENSIP Editor into the ENSIP repository when properly formatted.
 
-**Review** - An EIP Author marks an EIP as ready for and requesting Peer Review.
+**Review** - An ENSIP Author marks an ENSIP as ready for and requesting Peer Review.
 
-**Last Call** - This is the final review window for an EIP before moving to `Final`. An EIP editor will assign `Last Call` status and set a review end date (`last-call-deadline`), typically 14 days later.
+**Last Call** - This is the final review window for an ENSIP before moving to `Final`. An ENSIP editor will assign `Last Call` status and set a review end date (`last-call-deadline`), typically 14 days later.
 
-If this period results in necessary normative changes it will revert the EIP to `Review`.
+If this period results in necessary normative changes, it will revert the ENSIP to `Review`.
 
-**Final** - This EIP represents the final standard. A Final EIP exists in a state of finality and should only be updated to correct errata and add non-normative clarifications.
+**Final** - This ENSIP represents the final standard. A Final ENSIP exists in a state of finality and should only be updated to correct errata and add non-normative clarifications.
 
-A PR moving an EIP from Last Call to Final SHOULD contain no changes other than the status update. Any content or editorial proposed change SHOULD be separate from this status-updating PR and committed prior to it.
+A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other than the status update. Any content or editorial proposed change SHOULD be separate from this status-updating PR and committed prior to it.
 
-**Stagnant** - Any EIP in `Draft` or `Review` or `Last Call` if inactive for a period of 6 months or greater is moved to `Stagnant`. An EIP may be resurrected from this state by Authors or EIP Editors through moving it back to `Draft` or it's earlier status. If not resurrected, a proposal may stay forever in this status.
+**Stagnant** - Stagnant - Any ENSIP in `Draft`, `Review`, or `Last Call` if inactive for a period of 6 months or greater is moved to `Stagnant`. An ENSIP may be resurrected from this state by Authors or ENSIP Editors through moving it back to `Draft` or its earlier status. If not resurrected, a proposal may stay forever in this status.
 
->*EIP Authors are notified of any algorithmic change to the status of their EIP*
+>*ENSIP Authors are notified of any algorithmic change to the status of their ENSIP*
 
-**Withdrawn** - The EIP Author(s) have withdrawn the proposed EIP. This state has finality and can no longer be resurrected using this EIP number. If the idea is pursued at later date it is considered a new proposal.
+**Withdrawn** - The ENSIP Author(s) have withdrawn the proposed ENSIP. This state has finality and can no longer be resurrected using this ENSIP number. If the idea is pursued at a later date, it is considered a new proposal.
 
-**Living** - A special status for EIPs that are designed to be continually updated and not reach a state of finality. This includes most notably EIP-1.
+**Living** - A special status for ENSIPs that are designed to be continually updated and not reach a state of finality. This includes most notably ENSIP-?.[The number of this ENSIP]
 
-## What belongs in a successful EIP?
+## What belongs in a successful ENSIP?
 
-Each EIP should have the following parts:
+Each ENSIP should have the following parts:
 
-- Preamble - RFC 822 style headers containing metadata about the EIP, including the EIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include EIP number. See [below](./eip-1.md#eip-header-preamble) for details.
-- Abstract - Abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
-- Motivation *(optional)* - A motivation section is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. This section may be omitted if the motivation is evident.
-- Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (besu, erigon, ethereumjs, go-ethereum, nethermind, or others).
-- Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages. The rationale should discuss important objections or concerns raised during discussion around the EIP.
-- Backwards Compatibility *(optional)* - All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The EIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
-- Test Cases *(optional)* - Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. Tests should either be inlined in the EIP as data (such as input/expected output pairs, or included in `../assets/eip-###/<filename>`. This section may be omitted for non-Core proposals.
-- Reference Implementation *(optional)* - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all EIPs.
-- Security Considerations - All EIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life-cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. EIP submissions missing the "Security Considerations" section will be rejected. An EIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
-- Copyright Waiver - All EIPs must be in the public domain. The copyright waiver MUST link to the license file and use the following wording: `Copyright and related rights waived via [CC0](../LICENSE.md).`
+- Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./eip-1.md#eip-header-preamble) for details.
+- Abstract - The abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
+- Motivation *(optional)* - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
+- Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations including wallets and libraries.
+- Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g., how the feature is supported in other languages. The rationale should discuss important objections or concerns raised during the discussion around the ENSIP.
+- Backwards Compatibility *(optional)* - All ENSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The ENSIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
+- Test Cases *(optional)* - Test cases for an implementation are mandatory for ENSIPs that are affecting consensus changes. Tests should either be inlined in the ENSIP as data (such as input/expected output pairs) or included in `../assets/ensip-###/<filename>`. This section may be omitted for non-Core proposals.
+- Reference Implementation *(optional)* - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all ENSIPs.
+- Security Considerations - All ENSIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the lifecycle of the proposal. E.g., include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. ENSIP submissions missing the "Security Considerations" section will be rejected. An ENSIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
+- Copyright Waiver - All ENSIPs must be in the public domain. The copyright waiver MUST link to the license file and use the following wording: `Copyright and related rights waived via [CC0](../LICENSE.md).`
 
-## EIP Formats and Templates
+## ENSIP Formats and Templates
 
-EIPs should be written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. There is a [template](https://github.com/ethereum/EIPs/blob/master/eip-template.md) to follow.
+ENSIPs should be written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. There is a [template](link?) to follow.
 
-## EIP Header Preamble
+## ENSIP Header Preamble
 
-Each EIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style header preamble, preceded and followed by three hyphens (`---`). This header is also termed ["front matter" by Jekyll](https://jekyllrb.com/docs/front-matter/). The headers must appear in the following order.
+Each ENSIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style header preamble, preceded and followed by three hyphens (`---`). This header is also termed ["front matter" by Jekyll](https://jekyllrb.com/docs/front-matter/). The headers must appear in the following order:
 
-`eip`: *EIP number*
+`ENSIP`: *ENSIP number*
 
-`title`: *The EIP title is a few words, not a complete sentence*
+`title`: *The ENSIP title is a few words, not a complete sentence*
 
 `description`: *Description is one full (short) sentence*
 
 `author`: *The list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.*
 
-`discussions-to`: *The url pointing to the official discussion thread*
+`discussions-to`: *The URL pointing to the official discussion thread*
 
 `status`: *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: *The date last call period ends on* (Optional field, only needed when status is `Last Call`)
+`last-call-deadline`: *The date last call period ends on (Optional field, only needed when status is Last Call)
 
 `type`: *One of `Standards Track`, `Meta`, or `Informational`*
 
-`category`: *One of `Core`, `Networking`, `Interface`, or `ERC`* (Optional field, only needed for `Standards Track` EIPs)
+`category`: *One of `Core` or `ERC`* (Optional field, only needed for `Standards Track` ENSIPs)
 
-`created`: *Date the EIP was created on*
+`created`: *Date the ENSIP was created on*
 
-`requires`: *EIP number(s)* (Optional field)
+`requires`: *ENSIP number(s)* (Optional field)
 
-`withdrawal-reason`: *A sentence explaining why the EIP was withdrawn.* (Optional field, only needed when status is `Withdrawn`)
+`withdrawal-reason`: *A sentence explaining why the ENSIP was withdrawn.* (Optional field, only needed when status is `Withdrawn`)
 
 Headers that permit lists must separate elements with commas.
 
@@ -148,55 +147,55 @@ Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd)
 
 ### `author` header
 
-The `author` header lists the names, email addresses or usernames of the authors/owners of the EIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the `author` header value must be:
+The `author` header lists the names, ENS names, email addresses or usernames of the authors/owners of the ENSIP. Those who prefer anonymity may use a ENS name and username only, or a first name, ENS name, and a username. The format of the `author` header value must be:
 
-> Random J. User &lt;address@dom.ain&gt;
-
-or
-
-> Random J. User (@username)
+> Random J. User / randomu.eth &lt;address@dom.ain&gt;
 
 or
 
-> Random J. User (@username) &lt;address@dom.ain&gt;
+> Random J. User / randomu.eth (@username)
+
+or
+
+> Random J. User / randomu.eth (@username) &lt;address@dom.ain&gt;
 
 if the email address and/or GitHub username is included, and
 
-> Random J. User
+> Random J. User / randomu.eth
 
 if neither the email address nor the GitHub username are given.
 
-At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them.
+At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them. All authors must have an ENS name. 
 
 ### `discussions-to` header
 
-While an EIP is a draft, a `discussions-to` header will indicate the URL where the EIP is being discussed.
+While an ENSIP is a draft, a `discussions-to` header will indicate the URL where the ENSIP is being discussed.
 
-The preferred discussion URL is a topic on [Ethereum Magicians](https://ethereum-magicians.org/). The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
+The preferred discussion URL is a topic on [ENS Forum](http://discuss.ens.domains). The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
 
 ### `type` header
 
-The `type` header specifies the type of EIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
+The `type` header specifies the type of ENSIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core or ERC).
 
 ### `category` header
 
-The `category` header specifies the EIP's category. This is required for standards-track EIPs only.
+The `category` header specifies the ENSIP's category. This is required for standards-track ENSIPs only.
 
 ### `created` header
 
-The `created` header records the date that the EIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+The `created` header records the date that the ENSIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
 
 ### `requires` header
 
-EIPs may have a `requires` header, indicating the EIP numbers that this EIP depends on. If such a dependency exists, this field is required.
+ENSIPs may have a `requires` header, indicating the ENSIP numbers that this ENSIP depends on. If such a dependency exists, this field is required.
 
-A `requires` dependency is created when the current EIP cannot be understood or implemented without a concept or technical element from another EIP. Merely mentioning another EIP does not necessarily create such a dependency.
+A `requires` dependency is created when the current ENSIP cannot be understood or implemented without a concept or technical element from another ENSIP. Merely mentioning another ENSIP does not necessarily create such a dependency.
 
 ## Linking to External Resources
 
 Other than the specific exceptions listed below, links to external resources **SHOULD NOT** be included. External resources may disappear, move, or change unexpectedly.
 
-The process governing permitted external resources is described in [EIP-5757](./eip-5757.md).
+The process governing permitted external resources is the same as with EIPs and is described in [EIP-5757](./eip-5757.md).
 
 ### Execution Client Specifications
 
@@ -288,7 +287,7 @@ Permitted WHATWG specification URLs must anchor to a specification defined in th
 ^https:\/\/[a-z]*\.spec\.whatwg\.org/commit-snapshots/[0-9a-f]{40}/$
 ```
 
-Although not recommended by WHATWG, EIPs must anchor to a particular commit so that future readers can refer to the exact version of the living standard that existed at the time the EIP was finalized. This gives readers sufficient information to maintain compatibility, if they so choose, with the version referenced by the EIP and the current living standard.
+Although not recommended by WHATWG, ENSIPs must anchor to a particular commit so that future readers can refer to the exact version of the living standard that existed at the time the ENSIP was finalized. This gives readers sufficient information to maintain compatibility, if they so choose, with the version referenced by the ENSIP and the current living standard.
 
 ### Internet Engineering Task Force (IETF)
 
@@ -449,63 +448,68 @@ See the [Citation Style Language Schema](https://resource.citationstyles.org/sch
 
 The top-level URL field must resolve to a copy of the referenced document which can be viewed at zero cost. Values under `additional-urls` must also resolve to a copy of the referenced document, but may charge a fee.
 
-## Linking to other EIPs
+## Linking to other ENSIPs
 
-References to other EIPs should follow the format `EIP-N` where `N` is the EIP number you are referring to.  Each EIP that is referenced in an EIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main EIPs site, mirrors of the main EIP site, etc.  For example, you would link to this EIP as `./eip-1.md`.
+References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./eip-1.md`. For draft ENSIPs `N` may must start the letter `D` such as `ENSIP-D137`. 
+
+## Linking to EIPs (Ethereum Improvement Proposals)
+
+References to EIPs should follow the format `ENSIP-N` where `N` is the EIP number you are referring to.  Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  
+
+```markdown
+[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
+```
+
+Which renders to:
+
+[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
+
+Permitted Ethereum Improvement Proposal URLs must anchor to a specific commit, and so must match this regular expression:
+
+```regex
+https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md
+^(https://github.com/ethereum/EIPS/blob/[0-9a-f]{40}/eip-[0-9]+\.md)$
+```
 
 ## Auxiliary Files
 
-Images, diagrams and auxiliary files should be included in a subdirectory of the `assets` folder for that EIP as follows: `assets/eip-N` (where **N** is to be replaced with the EIP number). When linking to an image in the EIP, use relative links such as `../assets/eip-1/image.png`.
+Images, diagrams and auxiliary files should be included in a subdirectory of the `assets` folder for that ENSIP as follows: `assets/ENSIP-N` (where **N** is to be replaced with the ENSIP number). When linking to an image in the ENSIP, use relative links such as `../assets/ensip-1/image.png`.
 
-## Transferring EIP Ownership
+## Transferring ENSIP Ownership
 
-It occasionally becomes necessary to transfer ownership of EIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred EIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the EIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the EIP. We try to build consensus around an EIP, but if that's not possible, you can always submit a competing EIP.
+It occasionally becomes necessary to transfer ownership of ENSIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred ENSIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the ENSIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the ENSIP. We try to build consensus around an ENSIP, but if that's not possible, you can always submit a competing ENSIP.
 
-If you are interested in assuming ownership of an EIP, send a message asking to take over, addressed to both the original author and the EIP editor. If the original author doesn't respond to the email in a timely manner, the EIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
+If you are interested in assuming ownership of an ENSIP, send a message asking to take over, addressed to both the original author and the ENSIP editor. If the original author doesn't respond to the email in a timely manner, the ENSIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
 
-## EIP Editors
+## ENSIP Editors
 
-The current EIP editors are
+The current ENSIP editors are
 
-- Alex Beregszaszi (@axic)
-- Greg Colvin (@gcolvin)
-- Matt Garnett (@lightclient)
-- Sam Wilson (@SamWilsn)
-- Zainan Victor Zhou (@xinbenlv)
-- Gajinder Singh (@g11tech)
+- Nick Johnson (@Arachnid)
 
-Emeritus EIP editors are
+If you would like to become an ENSIP editor, please check contact a current editor.
 
-- Casey Detrio (@cdetrio)
-- Gavin John (@Pandapip1)
-- Hudson Jameson (@Souptacular)
-- Martin Becze (@wanderer)
-- Micah Zoltu (@MicahZoltu)
-- Nick Johnson (@arachnid)
-- Nick Savers (@nicksavers)
-- Vitalik Buterin (@vbuterin)
+## ENSIP Editor Responsibilities
 
-If you would like to become an EIP editor, please check [EIP-5069](./eip-5069.md).
+For each new ENSIP that comes in, an editor does the following:
 
-## EIP Editor Responsibilities
-
-For each new EIP that comes in, an editor does the following:
-
-- Read the EIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
+- Read the ENSIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
 - The title should accurately describe the content.
-- Check the EIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style
+- Check the ENSIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style
 
-If the EIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+If the ENSIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
 
-Once the EIP is ready for the repository, the EIP editor will:
+Once the ENSIP is ready for the repository, the ENSIP editor will:
 
-- Assign an EIP number (generally incremental; editors can reassign if number sniping is suspected)
-- Merge the corresponding [pull request](https://github.com/ethereum/EIPs/pulls)
-- Send a message back to the EIP author with the next step.
+- Assign an ENSIP draft number (generally incremental; editors can reassign if number sniping is suspected)
+- Merge the corresponding [pull request](link?)
+- Send a message back to the ENSIP author with the next step.
 
-Many EIPs are written and maintained by developers with write access to the Ethereum codebase. The EIP editors monitor EIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
+Many ENSIPs are written and maintained by developers with write access to the ENS Labs codebase. The ENSIP editors monitor ENSIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
 
-The editors don't pass judgment on EIPs. We merely do the administrative & editorial part.
+The editors don't pass judgment on ENSIPs. We merely do the administrative & editorial part. 
+
+Unlike EIPs however, currently ENS Labs has oversight authority over ENSIPs, and even if an ENSIP meets all the guidlines, it is not guaranteed that the ENSIP will be made final.
 
 ## Style Guide
 
@@ -514,28 +518,29 @@ The editors don't pass judgment on EIPs. We merely do the administrative & edito
 The `title` field in the preamble:
 
 - Should not include the word "standard" or any variation thereof; and
-- Should not include the EIP's number.
+- Should not include the ENSIP's number.
 
 ### Descriptions
 
 The `description` field in the preamble:
 
 - Should not include the word "standard" or any variation thereof; and
-- Should not include the EIP's number.
+- Should not include the ENSIP's number.
 
-### EIP numbers
+### ENSIP numbers
 
-When referring to an EIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X` where `X` is that EIP's assigned number. When referring to EIPs with any other `category`, it must be written in the hyphenated form `EIP-X` where `X` is that EIP's assigned number.
+When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X` where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X` where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Draft numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull ruquest. Final ENSIPs are assigned final publication numbers. This system is different from EIPs where final EIPs keep the oritinal draft number, and is more similar to the US patent system which uses different numbers for applications and published patents. 
+
 
 ### RFC 2119 and RFC 8174
 
-EIPs are encouraged to follow [RFC 2119](https://www.ietf.org/rfc/rfc2119.html) and [RFC 8174](https://www.ietf.org/rfc/rfc8174.html) for terminology and to insert the following at the beginning of the Specification section:
+ENSIPs are encouraged to follow [RFC 2119](https://www.ietf.org/rfc/rfc2119.html) and [RFC 8174](https://www.ietf.org/rfc/rfc8174.html) for terminology and to insert the following at the beginning of the Specification section:
 
 > The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
 
 ## History
 
-This document was derived heavily from [Bitcoin's BIP-0001](https://github.com/bitcoin/bips) written by Amir Taaki which in turn was derived from [Python's PEP-0001](https://peps.python.org/). In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Ethereum Improvement Process, and should not be bothered with technical questions specific to Ethereum or the EIP. Please direct all comments to the EIP editors.
+This document was derived heavily from [EIP-1](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md), authored by Martin Becze <mb@ethereum.org> and Hudson Jameson <hudson@ethereum.org>. They are not responsible for its use in the Ethereum Name Service Improvement Process, and should not be bothered with technical questions specific to ENS or the ENSIP. Please direct all comments to the ENSIP editors.
 
 ## Copyright
 
