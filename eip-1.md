@@ -171,11 +171,11 @@ At least one author must use a GitHub username, in order to get notified on chan
 
 While an ENSIP is a draft, a `discussions-to` header will indicate the URL where the ENSIP is being discussed.
 
-The preferred discussion URL is a topic on [ENS Forum](http://discuss.ens.domains). The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
+The preferred discussion URL is a topic on [ENS Forum](http://discuss.ens.domains). The URL cannot point to GitHub pull requests, any URL which is ephemeral, or any URL which can get locked over time (e.g., Reddit topics).
 
 ### `type` header
 
-The `type` header specifies the type of ENSIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core or ERC).
+The `type` header specifies the type of ENSIP: Standards Track, Meta, or Informational. If the track is Standards, please include the subcategory (core or ERC).
 
 ### `category` header
 
@@ -183,7 +183,7 @@ The `category` header specifies the ENSIP's category. This is required for stand
 
 ### `created` header
 
-The `created` header records the date that the ENSIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+The `created` header records the date that the ENSIP was assigned a number. The date should be in the yyyy-mm-dd format, e.g., 2001-08-14.
 
 ### `requires` header
 
@@ -473,11 +473,11 @@ https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/E
 
 ## Auxiliary Files
 
-Images, diagrams and auxiliary files should be included in a subdirectory of the `assets` folder for that ENSIP as follows: `assets/ENSIP-N` (where **N** is to be replaced with the ENSIP number). When linking to an image in the ENSIP, use relative links such as `../assets/ensip-1/image.png`.
+Images, diagrams, and auxiliary files should be included in a subdirectory of the `assets` folder for that ENSIP as follows: `assets/ENSIP-N` (where **N** is to be replaced with the ENSIP number). When linking to an image in the ENSIP, use relative links such as `../assets/ensip-1/image.png`.
 
 ## Transferring ENSIP Ownership
 
-It occasionally becomes necessary to transfer ownership of ENSIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred ENSIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the ENSIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the ENSIP. We try to build consensus around an ENSIP, but if that's not possible, you can always submit a competing ENSIP.
+It occasionally becomes necessary to transfer ownership of ENSIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred ENSIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the ENSIP process, or has fallen off the face of the 'net (i.e., is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the ENSIP. We try to build consensus around an ENSIP, but if that's not possible, you can always submit a competing ENSIP.
 
 If you are interested in assuming ownership of an ENSIP, send a message asking to take over, addressed to both the original author and the ENSIP editor. If the original author doesn't respond to the email in a timely manner, the ENSIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
 
@@ -495,7 +495,7 @@ For each new ENSIP that comes in, an editor does the following:
 
 - Read the ENSIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
 - The title should accurately describe the content.
-- Check the ENSIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style
+- Check the ENSIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub-flavored Markdown), code style
 
 If the ENSIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
 
@@ -509,7 +509,7 @@ Many ENSIPs are written and maintained by developers with write access to the EN
 
 The editors don't pass judgment on ENSIPs. We merely do the administrative & editorial part. 
 
-Unlike EIPs however, currently ENS Labs has oversight authority over ENSIPs, and even if an ENSIP meets all the guidlines, it is not guaranteed that the ENSIP will be made final.
+Unlike EIPs, however, currently ENS Labs has oversight authority over ENSIPs, and even if an ENSIP meets all the guidelines, it is not guaranteed that the ENSIP will be made final.
 
 ## Style Guide
 
@@ -529,7 +529,7 @@ The `description` field in the preamble:
 
 ### ENSIP numbers
 
-When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X` where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X` where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Draft numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull ruquest. Final ENSIPs are assigned final publication numbers. This system is different from EIPs where final EIPs keep the oritinal draft number, and is more similar to the US patent system which uses different numbers for applications and published patents. 
+When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X` where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X` where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Draft numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull request. Final ENSIPs are assigned final publication numbers. This system is different from EIPs where final EIPs keep the original draft number, and is more similar to the US patent system which uses different numbers for applications and published patents. 
 
 
 ### RFC 2119 and RFC 8174
