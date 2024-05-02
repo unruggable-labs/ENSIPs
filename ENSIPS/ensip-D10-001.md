@@ -529,8 +529,7 @@ The `description` field in the preamble:
 
 ### ENSIP numbers
 
-When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X` where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X` where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Draft numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull request. Final ENSIPs are assigned final publication numbers. This system is different from EIPs where final EIPs keep the original draft number, and is more similar to the US patent system which uses different numbers for applications and published patents. 
-
+When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X`, where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X`, where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Non-final ENSIP numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull request. If there are more than three digits in the number, a `-` should be used to break up the number every three digits. For example, where a `,` might be used traditionally for large numbers, e.g., `ENSIP-D10-001`. Final ENSIPs are assigned final publication numbers. This system is different from EIPs, where final EIPs keep the original draft assigned number, and is more similar to the US patent system, which uses different numbers for applications and published patents.
 
 ### RFC 2119 and RFC 8174
 
