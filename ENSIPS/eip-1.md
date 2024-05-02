@@ -53,7 +53,7 @@ Before you begin writing a formal ENSIP, you should vet your idea. Ask the ENS c
 Once the idea has been vetted, your next responsibility will be to present (by means of an ENSIP Draft) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give feedback on the aforementioned channels. You should try and gauge whether the interest in your ENSIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core ENSIP will be much greater than for an ERC, and the ENSIP will need sufficient interest from the Ethereum client teams. Negative community feedback will be taken into consideration and may prevent your ENSIP from moving past the Draft stage.
 
 
-### Core EIPs
+### Core ENSIPs
 
 For Core ENSIPs, given that they may require upgrades to smart contracts, gateways, and client implementations to be considered Final (see "ENSIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your ENSIP.
 
@@ -68,9 +68,9 @@ These calls may result in a "rough consensus" around the merits of an ENSIP, and
 
 ### ENSIP Process
 
-The following is the standardization process for all EIPs in all tracks:
+The following is the standardization process for all ENSIPs in all tracks:
 
-![ENSIP Status Diagram](EIP-process-update.jpg)
+![ENSIP Status Diagram](../assets/EIP-process-update.jpg)
 
 **Idea** - An idea that is pre-draft. This is not tracked within the ENSIP Repository.
 
