@@ -70,7 +70,7 @@ These calls may result in a "rough consensus" around the merits of an ENSIP, and
 
 The following is the standardization process for all ENSIPs in all tracks:
 
-![ENSIP Status Diagram](../assets/EIP-process-update.jpg)
+![ENSIP Status Diagram](../assets/ENSIP-D10-001/EIP-process-update.jpg)
 
 **Idea** - An idea that is pre-draft. This is not tracked within the ENSIP Repository.
 
