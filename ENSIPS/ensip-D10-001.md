@@ -13,11 +13,9 @@ ENSIP stands for Ethereum Name Service Improvement Proposal. An ENSIP is a desig
 
 ## ENSIP Rationale
 
-In 2016, a numbering system was set up, similar to the US Patent system, where final published ENSIPs have consecutive ascending numbers such as 1, 2, 3, 4, and so on. This system differs from that of EIPs, where the final EIP numbers remain the same as their draft numbers, often resulting in significant gaps between the numbering of finalized EIPs.
+Currently no formal numbering system has been set up for draft ENSIPs, which leads to difficulties for authors trying to advance their drafts. This ENSIP aims to establish a system similar to that of EIPs that includes drafts as well as various stages for ENSIPs such as draft, review, last call, and final.
 
-However, no system was set up for draft ENSIPs, leading to difficulties for authors trying to advance their drafts without a numbering system and formal process in place. This ENSIP aims to establish a system similar to that of EIPs that includes a numbering system for drafts as well as various stages for ENSIPs such as draft, review, last call, and final.
-
-An upgraded ENSIP process will allow for proposing new features, changes, and standards, gathering community technical input on issues, and documenting the design decisions involved. Maintained as text files in a versioned repository, the revision history of ENSIPs serves as the historical record of each proposal.
+This ENSIP process will allow for proposing new features, changes, and standards, gathering community technical input on issues, and documenting the design decisions involved. Maintained as text files in a versioned repository, the revision history of ENSIPs serves as the historical record of each proposal.
 
 For ENS implementers, ENSIPs provide a convenient way to track the progress of their implementations. Ideally, each implementation maintainer would list the ENSIPs they have implemented, offering end users a convenient method to check the current status of a given implementation or library.
 
@@ -28,7 +26,7 @@ There are three types of ENSIPs:
 - A **Standards Track ENSIP** describes any change that affects most or all ENS implementations, such as changes to the ENS protocol, including the way an ENS name is resolved, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using ENS. Standards Track ENSIPs consist of three parts—a design document, an implementation, and (if warranted) an update to the formal protocol specification. Furthermore, Standards Track ENSIPs can be broken down into the following categories:
 
   - **Core**: improvements requiring a change to the way that ENS names are resolved by clients, standards that affect the validity of ENS name character combinations, or any standard that would reasonably affect the everyday use of ENS names by users and clients.
-  - **ERC**: application-level standards and conventions, including contract standards such as resolver standards, name registries, URI schemes, library/package formats, and wallet integrations.
+  - **ENSRC**: application-level standards and conventions, including contract standards such as resolver standards, name registries, URI schemes, library/package formats, and wallet integrations.
 
 - A **Meta ENSIP** describes a process surrounding ENS or proposes a change to (or an event in) a process. Process ENSIPs are like Standards Track ENSIPs but apply to areas other than the ENS protocol itself. They may propose an implementation, but not anything that changes the way ENS names are resolved, for example; they often require community consensus; unlike Informational ENSIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in ENS development. Any meta-ENSIP is also considered a Process ENSIP.
 
@@ -60,9 +58,6 @@ For Core ENSIPs, given that they may require upgrades to smart contracts, gatewa
 The best way to get feedback from ENS developers is to present the ENSIP at the ENS Ecosystem call. The ENS Ecosystem call serves as a way for developers in the ENS community to get feedback on their projects, as well as discuss improvements to ENS, including the core ENS protocol.
 
 These calls may result in a "rough consensus" around the merits of an ENSIP, and may serve to direct authors of ENSIPs to further consult relevant parties who may be impacted, for example, wallets, or well-known dapps that implement the ENS protocol.
-
-:warning: The ENSIPs process and ENS Ecosystem call were not designed to address contentious non-technical issues, but, due to the lack of other ways to address these, often end up entangled in them. This puts the burden on client implementers to try and gauge community sentiment, which hinders the technical coordination function of ENSIPs and ENS Ecosystem calls. If you are shepherding an ENSIP, you can make the process of building community consensus easier by making sure that the ENS DAO forum thread for your ENSIP includes or links to as much of the community discussion as possible and that various stakeholders are well-represented.
-
 
 *In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
 
@@ -193,9 +188,7 @@ A `requires` dependency is created when the current ENSIP cannot be understood o
 
 ## Linking to External Resources
 
-Other than the specific exceptions listed below, links to external resources **SHOULD NOT** be included. External resources may disappear, move, or change unexpectedly.
-
-The process governing permitted external resources is the same as with EIPs and is described in [EIP-5757](./eip-5757.md).
+With EIPs, external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.     
 
 ### Execution Client Specifications
 
@@ -450,7 +443,7 @@ The top-level URL field must resolve to a copy of the referenced document which 
 
 ## Linking to other ENSIPs
 
-References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./eip-1.md`. For draft ENSIPs `N` may must start the letter `D` such as `ENSIP-D137`. 
+References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./eip-1.md`. 
 
 ## Linking to EIPs (Ethereum Improvement Proposals)
 
@@ -487,7 +480,9 @@ The current ENSIP editors are
 
 - Nick Johnson (@Arachnid)
 
-If you would like to become an ENSIP editor, please check contact a current editor.
+If you would like to become an ENSIP editor, please contact a current editor.
+
+Generally, ENSIP editors will be responsible for choosing new ENSIP editors; however, it is also possible for the ENS DAO to appoint ENSIP editors using a DAO-wide vote.
 
 ## ENSIP Editor Responsibilities
 
@@ -501,7 +496,7 @@ If the ENSIP isn't ready, the editor will send it back to the author for revisio
 
 Once the ENSIP is ready for the repository, the ENSIP editor will:
 
-- Assign an ENSIP draft number (generally incremental; editors can reassign if number sniping is suspected)
+- Assign an ENSIP number (generally incremental; editors can reassign if number sniping is suspected). Editors may also choose to delay or deny assigning a number in cases where the application is not considered to have a minimum degree of merit. 
 - Merge the corresponding [pull request](link?)
 - Send a message back to the ENSIP author with the next step.
 
@@ -529,7 +524,7 @@ The `description` field in the preamble:
 
 ### ENSIP numbers
 
-When referring to an ENSIP with a `category` of `ERC`, it must be written in the hyphenated form `ERC-X`, where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X`, where `X` is that ENSIP's assigned number. If the ENSIP is a draft, the draft number must be used. Non-final ENSIP numbers start with the letter `D` and are followed by an assigned number, usually at the point of the initial pull request. If there are more than three digits in the number, a `-` should be used to break up the number every three digits. For example, where a `,` might be used traditionally for large numbers, e.g., `ENSIP-D10-001`. Final ENSIPs are assigned final publication numbers. This system is different from EIPs, where final EIPs keep the original draft assigned number, and is more similar to the US patent system, which uses different numbers for applications and published patents.
+When referring to an ENSIP with a `category` of `ENSRC`, it must be written in the hyphenated form `ENSRC-X`, where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X`, where `X` is that ENSIP's assigned number. 
 
 ### RFC 2119 and RFC 8174
 
