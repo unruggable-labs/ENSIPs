@@ -486,15 +486,15 @@ Generally, ENSIP editors will be responsible for choosing new ENSIP editors; how
 
 For each new ENSIP that comes in, an editor does the following:
 
-- Read the ENSIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
+- Read the ENSIP to check if it is ready: sound and complete.
 - The title should accurately describe the content.
 - Check the ENSIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub-flavored Markdown), code style
 
-If the ENSIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+If the ENSIP isn't ready, the editor will send it back to the author for revision with specific instructions. For EIPs, generally, a new EIP will not be sent back to the author solely based on merit. However, for ENSIPs, editors can refuse to merge an ENSIP to protect against low-effort or AI-created applications, ensuring the quality and integrity of proposals.
 
 Once the ENSIP is ready for the repository, the ENSIP editor will:
 
-- Assign an ENSIP number (generally incremental; editors can reassign if number sniping is suspected). Editors may also choose to delay or deny assigning a number in cases where the application is not considered to have a minimum degree of merit. 
+- Assign an ENSIP number (generally incremental; editors can reassign if number sniping is suspected).  
 - Merge the corresponding [pull request](link?)
 - Send a message back to the ENSIP author with the next step.
 
