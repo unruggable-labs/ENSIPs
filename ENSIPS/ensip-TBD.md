@@ -13,9 +13,7 @@ ENSIP stands for Ethereum Name Service Improvement Proposal. An ENSIP is a desig
 
 ## ENSIP Rationale
 
-Currently no formal numbering system has been set up for draft ENSIPs, which leads to difficulties for authors trying to advance their drafts. This ENSIP aims to establish a system similar to that of EIPs that includes drafts as well as various stages for ENSIPs such as draft, review, last call, and final.
-
-This ENSIP process will allow for proposing new features, changes, and standards, gathering community technical input on issues, and documenting the design decisions involved. Maintained as text files in a versioned repository, the revision history of ENSIPs serves as the historical record of each proposal.
+This ENSIP aims to establish a system similar to that of EIPs, including various stages for ENSIPs such as draft, review, last call, and final. It will allow for proposing new features, changes, and standards, gathering community technical input on issues, and documenting the design decisions involved. Maintained as text files in a versioned repository, the revision history of ENSIPs will serve as the historical record of each proposal.
 
 For ENS implementers, ENSIPs provide a convenient way to track the progress of their implementations. Ideally, each implementation maintainer would list the ENSIPs they have implemented, offering end users a convenient method to check the current status of a given implementation or library.
 
