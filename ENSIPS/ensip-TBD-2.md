@@ -7,17 +7,49 @@ author: Prem Makeig (premm.eth) <premm@unruggable.com>, raffy.eth <raffy@unrugga
 created: 2024-6-7
 ---
 
-* Objective: put web content directly into ENS contenthash.  When combined with offchain servers, provides alternative hosting solution.  When combined with EVMGateway, provides a decentralized solution using affordable? L2 storage.
+# Abstract 
 
-* Two new formats
+This ENSIP extends the `contenthash` field to support two additional content types: Data URIs and URLs.
+
+# Motivation
+
+The `contenthash` field has become the standard for using ENS names for decentralized websites and dapps. With ENSIP-10 and CCIP-Read (EIP-3668), resolving ENS records from L2s and offchain is now possible, reducing the cost of using the `contenthash` field. This makes adopting the DataURI standard feasible, allowing content like webapps, images, and videos to be stored either onchain or offchain. While ENS names are traditionally linked with decentralization, CCIP-Read has increased their flexibility, enabling use cases like centralized offchain names. However, the `contenthash` field still supports only decentralized storage. This ENSIP also introduces a new URL content type for the `contenthash` field, allowing browsers to redirect to a standard URL when loading an ENS name.
+
+# Specification
+
+ENSIP-7 introduced the `contenthash` field for resolving ENS names to content hosted on distributed systems such as IPFS and Swarm. The value returned by `contenthash` is represented as a machine-readable multicodec, which permits a wide range of protocols to be supported by ENS names. The format is specified as follows:
+
+```
+<protoCode uvarint><value []byte>
+```
+
+protoCodes and their meanings are specified in the multiformats/multicodec repository.
+
+This intruduces two new types of new multicodecs, URI and Data URI.  
+
+We have proposed to multiformats the [protoCodes](https://github.com/multiformats/multicodec/tree/master?tab=readme-ov-file#adding-new-multicodecs-to-the-table):
+
+[!WARNING] 
+These protoCodes are not approved yet! Use ENS specific codes instead until they become approved.
+
+URI: 0xf2 
+Data URI: 0xf3
+
+However, we have no control over whether these protoCodes will be approved. It is however possible to have ENS specific protoCodes using a pre-reserved range of protoCodes, 0x300000 to 0x3FFFFF, set aside for application speciific use cases. 
+
+ENS specific protoCodes:
+
+URI: 0x38d195
+Data URI: 0x38d196
+
+
+## Two new formats ?? Do thise need to be multihashes becasue of ENSIP-7
 	1. URL
 		* Format: `uvarint(codec1) + <URL as utf8 bytes>`
+
 	1. DataURI
 		* Format: `uvarint(codec2) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`
 		* `mime` cannot exceed 255 bytes (or could be another uvarint)
-
-* Multicodec: need to figure out `codec1` and `codec2` values
-	* [I think with a large enough value we can just pick one?](https://github.com/multiformats/multicodec/tree/master?tab=readme-ov-file#adding-new-multicodecs-to-the-table)
 
 * Render as Human-readable URL
 	1. URL: `$URL` (literal)
