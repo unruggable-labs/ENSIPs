@@ -32,7 +32,8 @@ We have proposed to multiformats the [protoCodes](https://github.com/multiformat
 >[!WARNING] 
 >These protoCodes are not approved yet! Use ENS specific codes instead until they become approved.
 
-URI: 0xf2 
+URI: 0xf2
+
 Data URI: 0xf3
 
 However, we have no control over whether these protoCodes will be approved. It is however possible to have ENS specific protoCodes using a pre-reserved range of protoCodes, 0x300000 to 0x3FFFFF, set aside for application speciific use cases. 
@@ -40,6 +41,7 @@ However, we have no control over whether these protoCodes will be approved. It i
 ENS specific protoCodes:
 
 URI: 0x38d195
+
 Data URI: 0x38d196
 
 
