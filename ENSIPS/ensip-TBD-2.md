@@ -29,8 +29,8 @@ This intruduces two new types of new multicodecs, URI and Data URI.
 
 We have proposed to multiformats the [protoCodes](https://github.com/multiformats/multicodec/tree/master?tab=readme-ov-file#adding-new-multicodecs-to-the-table):
 
-[!WARNING] 
-These protoCodes are not approved yet! Use ENS specific codes instead until they become approved.
+>[!WARNING] 
+>These protoCodes are not approved yet! Use ENS specific codes instead until they become approved.
 
 URI: 0xf2 
 Data URI: 0xf3
