@@ -44,30 +44,32 @@ uri: 0x38d195
 
 data-uri: 0x38d196
 
-## Two new formats ?? Do thise need to be multihashes becasue of ENSIP-7
-	1. URL
-		* Format: `uvarint(codec1) + <URL as utf8 bytes>`
+## Two new formats ?? Do these need to be multihashes becasue of ENSIP-7
+	1. URI
+		* Format: `uvarint(codec1) + <URI as utf8 bytes>`
 
-	1. DataURI
+	1. Data URL
 		* Format: `uvarint(codec2) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`
-		* `mime` cannot exceed 255 bytes (or could be another uvarint)
+		* `mime` cannot exceed 255 bytes
 
-* Render as Human-readable URL
-	1. URL: `$URL` (literal)
-	1. DataURI: `data:$MIME;base64,${btoa($DATA)}`
+		Comment: check on the syntax, to unifiy it with other ENSIPs. 
 
-* Render via Gateway (eg. `.limo`)
-	1. URL: `HTTP 307`
-		* `Location: $URL$PATH`
-		* eg. `https://nick.eth.limo/a/b.c?d=e` has path `/a/b.c?d=e`
-	1. DataURI: `HTTP 200`
+## Web Application View 
+
+	1. URI: `$URI` (literal)
+	1. Data URL: `data:$MIME;base64,${base64_encode($DATA)}`
+
+## Web Gateway Resolution (eg. `.limo`)
+	1. URI: `HTTP 307`
+		* `Location: $URI`
+		* eg. `https://nick.com/a/b.c?d=e`
+	1. Data URL: `HTTP 200`
 		* `Content-type: $MIME`
-		* For servable content, like: `text/*`, serve the same content regardless of path.
-			* eg. `https://premm.eth.limo` === `https://premm.eth.limo/a/b/c`
+		* When resolving Data URLs the path of the gateway URI i.e. nick.eth.limo/a, i.e. not HTTP 404.
+			* eg. `https://premm.eth.limo` is the same as `https://premm.eth.limo/a/b/c`
 			* Use HTML+JS to dynamically handle the path/querystring
-			* See web archive ideas (below)
-		* Otherwise:
-			* `Content-Transfer-Encoding: binary` (or mime is sufficient?)
+
+The [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) comprises a non-empty scheme component followed by a colon (:).
 		
 * Note: you can stick a `data:...` in URL but 4/3 data overhead and it will redirect instead of serve under your domain name
 
