@@ -44,7 +44,7 @@ uri: 0x38d195
 
 data-uri: 0x38d196
 
-## Two new formats ?? Do these need to be multihashes becasue of ENSIP-7
+## Two New Formats 
 	1. URI
 		* Format: `uvarint(codec1) + <URI as utf8 bytes>`
 
