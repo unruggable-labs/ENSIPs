@@ -60,18 +60,20 @@ data-uri: 0x38d196
 	1. Data URL: `data:$MIME;base64,${base64_encode($DATA)}`
 
 ## Web Gateway Resolution (eg. `.limo`)
-	1. URI: `HTTP 307`
-		* `Location: $URI`
-		* eg. `https://nick.com/a/b.c?d=e`
-	1. Data URL: `HTTP 200`
-		* `Content-type: $MIME`
-		* When resolving Data URLs the path of the gateway URI i.e. nick.eth.limo/a, i.e. not HTTP 404.
-			* eg. `https://premm.eth.limo` is the same as `https://premm.eth.limo/a/b/c`
-			* Use HTML+JS to dynamically handle the path/querystring
 
-The [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) comprises a non-empty scheme component followed by a colon (:).
-		
-* Note: you can stick a `data:...` in URL but 4/3 data overhead and it will redirect instead of serve under your domain name
+**URI: `HTTP 307`**
+	
+`Location: $URI`
+	
+eg. `https://domain.com/a/b.c?d=e`
+
+* Note: A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI URI. 
+
+**Data URL: `HTTP 200`**
+
+`Content-type: $MIME`
+
+When resolving Data URLs, the URL of the request to the gateway is only used to determine the ENS name. Any path or query data of the URL are ignored. eg. `https://premm.eth.limo` returns the same data URL as `https://premm.eth.limo/a/b/c`
 
 * Note: although storage costs likely curtail sizes, we should probably defines limits:
 	* URL: [2000? bytes](https://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers)
