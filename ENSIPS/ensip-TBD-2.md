@@ -62,16 +62,20 @@ e.g. data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==
 
 **URI: 
 
-* The HTTP response should be a `HTTP 307` Temporary Redirect**
+* The HTTP response MUST be a `HTTP 307` Temporary Redirect**
 	
-* The response should be the `Location: $URI` eg. https://domain.com/a/b.c?d=e
+* The response MUST be the `Location: $URI` eg. https://domain.com/a/b.c?d=e
 
 A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI. 
 
 **Data URL: `HTTP 200` OK**
 
-* The HTTP response should be of `Content-type: $MIME`
+* The HTTP response MUST be of `Content-type: $MIME`
 
 When resolving Data URLs, the URL of the request to the gateway is only used to determine the ENS name. Any path or query data of the request URL is ignored. For example `https://name.eth.limo` returns the same data URL as `https://name.eth.limo/a/b/c`.
+
+
+# Copyright
+Copyright and related rights waived via [CC0](../LICENSE.md).
 
 
