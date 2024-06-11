@@ -9,11 +9,11 @@ created: 2024-6-7
 
 # Abstract 
 
-This ENSIP extends the `contenthash` field to support two additional content types: Data URIs and URLs.
+This ENSIP extends the `contenthash` field to support two additional content types: data URLs and URIs.
 
 # Motivation
 
-The `contenthash` field has become the standard for using ENS names for decentralized websites and dapps. With ENSIP-10 and CCIP-Read (EIP-3668), resolving ENS records from L2s and offchain is now possible, reducing the cost of using the `contenthash` field. This makes adopting the DataURI standard feasible, allowing content like webapps, images, and videos to be stored either onchain or offchain. While ENS names are traditionally linked with decentralization, CCIP-Read has increased their flexibility, enabling use cases like centralized offchain names. However, the `contenthash` field still supports only decentralized storage. This ENSIP also introduces a new URL content type for the `contenthash` field, allowing browsers to redirect to a standard URL when loading an ENS name.
+The `contenthash` field has become the standard for using ENS names for decentralized websites and dapps. With ENSIP-10 and CCIP-Read (EIP-3668), resolving ENS records from L2s and offchain is now possible, reducing the cost of using the `contenthash` field. This makes adopting the data URL standard feasible, allowing content like webapps, images, and videos to be stored either onchain or offchain. While ENS names are traditionally linked with decentralization, CCIP-Read has increased their flexibility, enabling use cases like centralized offchain names. However, the `contenthash` field still supports only decentralized storage. This ENSIP also introduces a new URL content type for the `contenthash` field, allowing browsers to redirect to a standard URI when loading an ENS name.
 
 # Specification
 
@@ -23,66 +23,55 @@ ENSIP-7 introduced the `contenthash` field for resolving ENS names to content ho
 <protoCode uvarint><value []byte>
 ```
 
-protoCodes and their meanings are specified in the multiformats/multicodec repository.
+protoCodes and their meanings are specified in the [multiformats/multicodec](https://github.com/multiformats/multicodec) repository.
 
-This intruduces two new types of new multicodecs, URI and Data URI.  
-
-We have proposed to multiformats the [protoCodes](https://github.com/multiformats/multicodec/tree/master?tab=readme-ov-file#adding-new-multicodecs-to-the-table):
+This ENSIP intruduces two new types of new multicodecs, uri and data-url.  
 
 >[!WARNING] 
->These protoCodes are not approved yet! Use ENS specific codes instead until they become approved.
+>These protoCodes are not approved yet!.
 
 uri: 0xf2
 
 data-uri: 0xf3
 
-However, we have no control over whether these protoCodes will be approved. It is however possible to have ENS specific protoCodes using a pre-reserved range of protoCodes, 0x300000 to 0x3FFFFF, set aside for application speciific use cases. 
+## New Formats 
+**URI**
 
-ENS specific protoCodes:
+Format: `uvarint(codec1) + <URI as utf8 bytes>`
 
-uri: 0x38d195
+**Data URL**
 
-data-uri: 0x38d196
+Format: `uvarint(codec2) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`
 
-## Two New Formats 
-	1. URI
-		* Format: `uvarint(codec1) + <URI as utf8 bytes>`
+>[!Note] 
+>`MIME` cannot exceed 255 bytes
 
-	1. Data URL
-		* Format: `uvarint(codec2) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`
-		* `mime` cannot exceed 255 bytes
-
-		Comment: check on the syntax, to unifiy it with other ENSIPs. 
+Comment: check on the syntax, to unifiy it with other ENSIPs. 
 
 ## Web Application View 
 
-	1. URI: `$URI` (literal)
-	1. Data URL: `data:$MIME;base64,${base64_encode($DATA)}`
+**URI:** `$URI` (literal)
 
-## Web Gateway Resolution (eg. `.limo`)
+e.g. https://domain.com/a/b/c
 
-**URI: `HTTP 307`**
+**Data URL:** `data:$MIME;base64,${base64_encode($DATA)}`
+
+e.g. data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==	
+
+## Web Gateway Resolution (e.g. .limo)
+
+**URI: 
+
+* The HTTP response should be a `HTTP 307` Temporary Redirect**
 	
-`Location: $URI`
-	
-eg. `https://domain.com/a/b.c?d=e`
+* The response should be the `Location: $URI` eg. https://domain.com/a/b.c?d=e
 
-* Note: A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI URI. 
+A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI. 
 
-**Data URL: `HTTP 200`**
+**Data URL: `HTTP 200` OK**
 
-`Content-type: $MIME`
+* The HTTP response should be of `Content-type: $MIME`
 
-When resolving Data URLs, the URL of the request to the gateway is only used to determine the ENS name. Any path or query data of the URL are ignored. eg. `https://premm.eth.limo` returns the same data URL as `https://premm.eth.limo/a/b/c`
+When resolving Data URLs, the URL of the request to the gateway is only used to determine the ENS name. Any path or query data of the request URL is ignored. For example `https://name.eth.limo` returns the same data URL as `https://name.eth.limo/a/b/c`.
 
-* Note: although storage costs likely curtail sizes, we should probably defines limits:
-	* URL: [2000? bytes](https://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers)
-	* DataURI: 1MB?
 
-* Web Archive:
-	* IPFS allows hash/path to index into a pinned directory
-	* DataURI with text/html would allow text content, but no relative assets (like images)
-	* Either utilize an existing .webarchive format, like a special mime that is actually a zip archive of a web directory
-	* Users could also create a single HTML file using a bundler that embeds all of the content inline or compressed using JS
-
-* Issues: malicious files, rick rolls, zip bombs, etc.
