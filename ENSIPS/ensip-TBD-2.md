@@ -66,7 +66,7 @@ e.g. data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==
 	
 * The response MUST be the `Location: $URI` eg. https://domain.com/a/b.c?d=e.
 
-A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI. 
+If the URI is a data URL the web gateway will not resolve the data URL and instead will redirect the browser to the data URL. 
 
 **Data URL:**
 
