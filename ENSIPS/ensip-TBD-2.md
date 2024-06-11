@@ -1,6 +1,6 @@
 ---
 ensip: TBD
-title: DataURI and URL Contenthash
+title: Data URL and URI Contenthash
 status: Idea
 type: ENSRC
 author: Prem Makeig (premm.eth) <premm@unruggable.com>, raffy.eth <raffy@unruggable.com>
