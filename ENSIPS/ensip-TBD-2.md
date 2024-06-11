@@ -1,6 +1,6 @@
 ---
 ensip: TBD
-title: Data URL and URI Contenthash
+title: Data URL and URL Contenthash
 status: Idea
 type: ENSRC
 author: Prem Makeig (premm.eth) <premm@unruggable.com>, raffy.eth <raffy@unruggable.com>
@@ -60,17 +60,19 @@ e.g. data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==
 
 ## Web Gateway Resolution (e.g. .limo)
 
-**URI: 
+**URI:** 
 
-* The HTTP response MUST be a `HTTP 307` Temporary Redirect**
+* The HTTP response MUST be a `HTTP 307` Temporary Redirect.
 	
-* The response MUST be the `Location: $URI` eg. https://domain.com/a/b.c?d=e
+* The response MUST be the `Location: $URI` eg. https://domain.com/a/b.c?d=e.
 
 A data URI is a valid URI however, the web gateway will not resolve the data URL and instead will redirect the browser to the data URI. 
 
-**Data URL: `HTTP 200` OK**
+**Data URL:**
 
-* The HTTP response MUST be of `Content-type: $MIME`
+* The HTTP reponse MUST be a `HTTP 200` OK.
+
+* The HTTP response MUST be of `Content-type: $MIME`.
 
 When resolving Data URLs, the URL of the request to the gateway is only used to determine the ENS name. Any path or query data of the request URL is ignored. For example `https://name.eth.limo` returns the same data URL as `https://name.eth.limo/a/b/c`.
 
