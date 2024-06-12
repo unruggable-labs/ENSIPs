@@ -101,7 +101,7 @@ There MAY be as many `pages` objects, which MUST have one and only one `path` pa
 
 For `data` paramaters the format is the same as dara-url, `uvarint(f3) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`.
 
-
+```
 {
   "vwa-v1": {
     "pages": [
@@ -147,6 +147,7 @@ For `data` paramaters the format is the same as dara-url, `uvarint(f3) + byte(le
     ]
   }
 }
+```
 
 # Copyright
 Copyright and related rights waived via [CC0](../LICENSE.md).
