@@ -40,7 +40,7 @@ We introduce the VWA standard, a composable multipart standard that allows for i
 
 Format: `uvarint(??) + byte(length(ensip11IDs)) + <ensip11IDs uint64>[] + <DATA as bytes>`
 
-The VWA format is designed to provide the gateway the information necessary to retrive all the metadata and data objects necessary to resolve the multipage website. An array of [ENSIP-11](https://docs.ens.domains/ensip/11) chain ids, which are based on both chainID and coinType, are provided, so that gateways that don't have access to all of the chains, can revert without loading additonal data. 
+The VWA format is designed to provide the gateway the information necessary to retrive all the metadata and data objects necessary to resolve the multipage website. An array of [ENSIP-11](https://docs.ens.domains/ensip/11) chain ids `ensip11IDs`, which are based on both chainID and coinType, are provided, so that gateways that don't have access to all of the chains, can revert without loading additonal data. 
 
 The MIME type of the bytes data is UTF-8 `application/json`.
 
