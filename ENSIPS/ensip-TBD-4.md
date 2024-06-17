@@ -42,7 +42,7 @@ Format: `uvarint(??) + byte(length(ensip11IDs)) + <ensip11IDs uint64>[] + <DATA 
 
 The VWA format is designed to provide the gateway the information necessary to retrive all the metadata and data objects necessary to resolve the multipage website. An array of [ENSIP-11](https://docs.ens.domains/ensip/11) chain ids `ensip11IDs`, which are based on both chainID and coinType, are provided, so that gateways that don't have access to all of the chains, can revert without loading additonal data. 
 
-The MIME type of the bytes data is UTF-8 `application/json`.
+The MIME type of `DATA` bytes data is UTF-8 `application/json`.
 
 The JSON data MUST have an outermost object. It must contain one and only one inner object named with the prefix "vwa" followed by the version number, which is prefixed with a 'v' (e.g., "vwa_v1", "vwa_v2", etc.), with the specific version of the VWA format.
 
