@@ -104,7 +104,7 @@ Each ENSIP should have the following parts:
 
 ## ENSIP Formats and Templates
 
-ENSIPs should be written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. There is a [template](link?) to follow.
+ENSIPs should be written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. There is a [template](../ensip-template.md) to follow.
 
 ## ENSIP Header Preamble
 
