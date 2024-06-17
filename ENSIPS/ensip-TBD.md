@@ -3,7 +3,7 @@ ensip: TBD
 title: ENSIP Purpose and Guidelines
 status: Living
 type: Meta
-author: Prem Makeig (premm.eth) <premm@unruggable.com>
+author: Prem Makeig / premm.eth (@nxt3d) <premm@unruggable.com>
 created: 2024-4-26
 ---
 
@@ -91,7 +91,7 @@ A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other tha
 
 Each ENSIP should have the following parts:
 
-- Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./eip-1.md#eip-header-preamble) for details.
+- Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./ensip-TBD.md#eip-header-preamble) for details.
 - Abstract - The abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
 - Motivation *(optional)* - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
 - Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations including wallets and libraries.
