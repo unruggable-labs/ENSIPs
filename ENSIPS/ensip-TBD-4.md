@@ -44,7 +44,7 @@ The VWA format is designed to provide the gateway the information necessary to r
 
 The MIME type of `DATA` bytes data is UTF-8 `application/json`.
 
-The JSON data MUST have an outermost object. It must contain one and only one inner object named with the prefix "vwa" followed by the version number, which is prefixed with a 'v' (e.g., "vwa_v1", "vwa_v2", etc.), with the specific version of the VWA format.
+The JSON data MUST have an outermost object. It must contain one and only one inner VWA object named with the prefix "vwa" followed by the version number, which is prefixed with a 'v' (e.g., "vwa_v1", "vwa_v2", etc.), with the specific version of the VWA format.
 
 The VWA object MAY contain one or more page objects, contained with one and only one `pages` array. Each page object MUST have one and only one `path` parameter, and MUST contain either an `id` object or a `data` parameter. The `id` object is used for inscriptions and blobs transactions and MUST include a `thash` parameter, as well as an id `ensip11_id` using the ENSIP-11 format. Data parameters have the format, `uvarint(f3) + byte(length(MIME)) + <MIME bytes as ASCII> + <DATA as bytes>`.
 
