@@ -13,7 +13,7 @@ This ENSIP extends the `contenthash` field to support the newly introduced Verfi
 
 # Motivation
 
-The `contenthash` field has become the standard for using ENS names for decentralized websites and dapps. With ENSIP-10 and CCIP-Read (EIP-3668), resolving ENS records from L2s and offchain is now possible, reducing the cost of using the `contenthash` field. This makes adopting the [data URL](https://datatracker.ietf.org/doc/html/rfc2397) standard feasible, allowing content like webapps, images, and videos to be stored onchain or offchain. While ENS names are traditionally linked with decentralization, CCIP-Read has increased their flexibility, enabling use cases like centralized offchain names. Data URLs are useful for resolving static content, however, it is not possible to use data URLs for resolving multipage applications. This ENSIP introduces a new primitive web format, Verified Web Archive (VWA), specicaly design to allow for multipage web applications to stored onchain and resolved using a ENS name.  
+The `contenthash` field has become the standard for using ENS names for decentralized websites and dapps. With ENSIP-10 and CCIP-Read (EIP-3668), resolving ENS records from L2s and offchain is now possible, reducing the cost of using the `contenthash` field. This makes adopting the [data URL](https://datatracker.ietf.org/doc/html/rfc2397) standard feasible, allowing content like webapps, images, and videos to be stored onchain or offchain. While ENS names are traditionally linked with decentralization, CCIP-Read has increased their flexibility, enabling use cases like centralized offchain names. Data URLs are useful for resolving static content; however, it is not possible to use data URLs for resolving multipage applications. This ENSIP introduces a new primitive web format, Verified Web Archive (VWA), specifically designed to allow for multipage web applications to be stored onchain and resolved using an ENS name.
 
 # Specification
 
@@ -40,17 +40,15 @@ We introduce the VWA standard, a composable multipart standard that allows for i
 
 Format: `uvarint(??) + byte(length(ensip11IDs)) + <ensip11IDs uint64>[] + <DATA as bytes>`
 
-The VWA format is designed to provide the gateway the information necessary to retrive all the metadata and data objects necessary to resolve the multipage website. An array of ensip11 based ids, which are based on both chainID and coinType, are provided, so that gateways that don't have access to any of the chains, can revert without loading additonal data. 
+The VWA format is designed to provide the gateway the information necessary to retrive all the metadata and data objects necessary to resolve the multipage website. An array of [ENSIP-11](https://docs.ens.domains/ensip/11) chain ids, which are based on both chainID and coinType, are provided, so that gateways that don't have access to all of the chains, can revert without loading additonal data. 
 
 The MIME type of the bytes data is UTF-8 `application/json`.
 
-There MUST be one `vwa_v1` outermost object, which identifies the metadata as a VWA metadata file, with a version number. 
+The JSON data MUST have an outermost object. It must contain one and only one inner object named with the prefix "vwa" followed by the version number, which is prefixed with a 'v' (e.g., "vwa_v1", "vwa_v2", etc.), with the specific version of the VWA format.
 
-There MAY be as many `pages` objects, which MUST have one and only one `path` parameters, and MUST contain either a `id` parameter, or a `data` parameter. The `id` parameter is used for incriptions and blobs transactions, and MUST include a `thash` parameter, as well as a `ensip11_id`.
+The vwa object MAY contain as many `pages` objects, which MUST have one and only one `path` parameter, and MUST contain either an `id` object or a `data` parameter. The `id` object is used for inscriptions and blobs transactions and MUST include a `thash` parameter, as well as an id `ensip11_id` using the ENSIP-11 format. Data parameters have the format, `uvarint(f3) + byte(length(MIME)) + <MIME bytes as ASCII> + <DATA as bytes>`.
 
-For `data` paramaters the format is the same as dara-url, `uvarint(f3) + byte(length(MIME)) + <MIME bytes as ascii> + <DATA as bytes>`.
-
-Because VWA metadata files can contain other VWA metadata files, it is therefore possible for whole subdirectores to be stored in separate blockchain transactions. For example if the path of a given URL request is `/blog/march/1`, and the `contenthash` of the ENS name points to a VWA metadata file, the the gateway will first look for a path that matches `/blog/march/1`, if that can't be found, then it will look for a path that matches `/blog/march/`. If that patch exists, and contains an `id` that points to a valid VMA metadata file, then start the process over again, looking for the `/blog/march/1` path. If the exact path can be found then, access the `id` of the path and return the data-url content. This process can be reapeated as many times as necessary to find the correct path and data to resolve. 
+Because VWA metadata files can contain other VWA metadata files, it is therefore possible for whole subdirectories to be stored in separate blockchain transactions. For example, if the path of a given URL request is `/blog/march/1`, and the `contenthash` of the ENS name points to a VWA metadata file, the gateway will first look for a path that matches `/blog/march/1`. If that can't be found, then it will look for a path that matches `/blog/march/`. If that path exists and contains an `id` or `data` that contains to a valid VWA metadata file, then look for the `/blog/march/1` path. If the exact path can be found, then access the `id` of `data` of the path and return the content in the [ENSIP-TBD-2](./ensip-TBD-2.md) data URL format. This process can be repeated as many times as necessary to find the correct path and data to resolve.
 
 ```
 {
