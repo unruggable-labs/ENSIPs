@@ -1,5 +1,5 @@
 ---
-ensip: TBD
+ensip: 0
 title: ENSIP Purpose and Guidelines
 status: Living
 type: Meta
@@ -91,7 +91,7 @@ A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other tha
 
 Each ENSIP should have the following parts:
 
-- Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./ensip-TBD.md#eip-header-preamble) for details.
+- Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./ensip-0.md#eip-header-preamble) for details.
 - Abstract - The abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
 - Motivation *(optional)* - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
 - Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations including wallets and libraries.
@@ -441,7 +441,7 @@ The top-level URL field must resolve to a copy of the referenced document which 
 
 ## Linking to other ENSIPs
 
-References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./eip-1.md`. 
+References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./ensip-0.md`. 
 
 ## Linking to EIPs (Ethereum Improvement Proposals)
 
