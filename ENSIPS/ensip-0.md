@@ -3,7 +3,7 @@ ensip: 0
 title: ENSIP Purpose and Guidelines
 status: Living
 type: Meta
-author: Prem Makeig / premm.eth (@nxt3d) <premm@unruggable.com>
+author: Prem Makeig | premm.eth (@nxt3d) <premm@unruggable.com>
 created: 2024-4-26
 ---
 
@@ -142,19 +142,19 @@ Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd)
 
 The `author` header lists the names, ENS names, email addresses or usernames of the authors/owners of the ENSIP. Those who prefer anonymity may use a ENS name and username only, or a first name, ENS name, and a username. The format of the `author` header value must be:
 
-> Random J. User / randomu.eth &lt;address@dom.ain&gt;
+> Random J. User | randomu.eth &lt;address@dom.ain&gt;
 
 or
 
-> Random J. User / randomu.eth (@username)
+> Random J. User | randomu.eth (@username)
 
 or
 
-> Random J. User / randomu.eth (@username) &lt;address@dom.ain&gt;
+> Random J. User | randomu.eth (@username) &lt;address@dom.ain&gt;
 
 if the email address and/or GitHub username is included, and
 
-> Random J. User / randomu.eth
+> Random J. User | randomu.eth
 
 if neither the email address nor the GitHub username are given.
 
