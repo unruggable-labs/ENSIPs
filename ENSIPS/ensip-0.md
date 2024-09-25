@@ -63,7 +63,7 @@ These calls may result in a "rough consensus" around the merits of an ENSIP, and
 
 The following is the standardization process for all ENSIPs in all tracks:
 
-![ENSIP Status Diagram](../assets/ENSIP-TBD/EIP-process-update.jpg)
+![ENSIP Status Diagram](../assets/ENSIP-0/EIP-process-update.jpg)
 
 **Idea** - An idea that is pre-draft. This is not tracked within the ENSIP Repository.
 
@@ -116,7 +116,7 @@ Each ENSIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) sty
 
 `description`: *Description is one full (short) sentence*
 
-`author`: *The list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.*
+`author`: *The list of the author's or authors' name(s), ENS name(s), username(s), and email(s). Details are below.*
 
 `discussions-to`: *The URL pointing to the official discussion thread*
 
