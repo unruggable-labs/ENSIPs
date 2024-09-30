@@ -30,7 +30,7 @@ There are three types of ENSIPs:
 
 - An **Informational ENSIP** describes an ENS protocol design issue, or provides general guidelines or information to the ENS community, but does not propose a new feature or a change to the protocol. Informational ENSIPs do not necessarily represent ENS community consensus or a recommendation, so users and implementers are free to ignore Informational ENSIPs or follow their advice.
 
-It is highly recommended that a single ENSIP contain a single key proposal or new idea. The more focused the ENSIP, the more successful it tends to be. A change to one client doesn't require an ENSIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+It is highly recommended that a single ENSIP contain a single key proposal or new idea. The more focused the ENSIP is, the more successful it tends to be. A change to one application or client doesn't require an ENSIP; a change that affects multiple clients, such as wallets or libraries, or defines a standard for multiple apps to use, does.
 
 An ENSIP must meet certain minimum criteria. It must provide a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
 
