@@ -11,11 +11,11 @@ requires: <ensip number(s)> # Only required when you reference an ENSIP in the `
 ---
 
 <!--
-  READ ensip-TBD (https://eips.ethereum.org/ENSIPS/ensip-TBD.md) BEFORE USING THIS TEMPLATE!
+  READ ensip-0 (https://eips.ethereum.org/ENSIPS/ensip-0.md) BEFORE USING THIS TEMPLATE!
 
   This is the suggested template for new ensips. After you have filled in the requisite fields, please delete these comments.
 
-  Note that an ensip number will be assigned by an editor. When opening a pull request to submit your ENSIP, please use an abbreviated title in the filename, `eip-draft_title_abbrev.md`.
+  Note that an ensip number will be assigned by an editor. When opening a pull request to submit your ENSIP, please use an abbreviated title in the filename, `ensip-draft_title_abbrev.md`.
 
   The title should be 44 characters or less. It should not repeat the ensip number in title, irrespective of the category.
 
