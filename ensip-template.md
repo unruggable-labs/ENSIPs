@@ -1,7 +1,7 @@
 ---
 title: <The ENSIP title is a few words, not a complete sentence>
 description: <Description is one full (short) sentence>
-author: <a comma separated list of the author's or authors' name + '/' ENS name + GitHub username (in parenthesis), or name and email (in angle brackets).  Example, FirstName LastName / ENS Name (@GitHubUsername), FirstName LastName / ENS Name <foo@bar.com>, FirstName / ENS Name (@GitHubUsername) and GitHubUsername / ENS Name (@GitHubUsername)>
+author: <a comma separated list of the author's or authors' name + '|' ENS name + GitHub username (in parenthesis), or name and email (in angle brackets).  Example, FirstName LastName / ENS Name (@GitHubUsername), FirstName LastName / ENS Name <foo@bar.com>, FirstName / ENS Name (@GitHubUsername) and GitHubUsername / ENS Name (@GitHubUsername)>
 discussions-to: <URL>
 status: Draft
 type: <Standards Track, Meta, or Informational>
