@@ -44,9 +44,7 @@ If a **Core ENSIP** mentions or proposes changes to the ENS protocol, it should 
 
 Parties involved in the process are you, the champion or ENSIP author, the ENSIP editors, and the ENS DAO.
 
-Before you begin writing a formal ENSIP, you should vet your idea. Ask the ENS community first if an idea is original to avoid spending time on something that will be rejected based on prior research. It is thus recommended to open a discussion thread on the ENS DAO forum to do this.
-
-Once the idea has been vetted, your next responsibility will be to present (by means of an ENSIP Draft) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give feedback on the aforementioned channels. You should try and gauge whether the interest in your ENSIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core ENSIP will be much greater than for an ERC, and the ENSIP will need sufficient interest from the Ethereum client teams. Negative community feedback will be taken into consideration and may prevent your ENSIP from moving past the Draft stage.
+Before writing a formal ENSIP, you should first vet your idea by discussing it with the ENS community to ensure originality and avoid rejection due to prior research. Opening a thread on the ENS DAO forum is recommended. Once vetted, your responsibility is to present the idea in an ENSIP Draft, inviting feedback from editors, developers, and the community. It's important to gauge interest in the ENSIP relative to the effort involved in implementing it and how many parties will need to adopt it. Negative feedback could prevent the ENSIP from advancing beyond the Draft stage.
 
 
 ### Core ENSIPs
