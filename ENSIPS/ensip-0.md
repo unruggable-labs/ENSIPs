@@ -83,7 +83,7 @@ A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other tha
 
 **Withdrawn** - The ENSIP Author(s) have withdrawn the proposed ENSIP. This state has finality and can no longer be resurrected using this ENSIP number. If the idea is pursued at a later date, it is considered a new proposal.
 
-**Living** - A special status for ENSIPs that are designed to be continually updated and not reach a state of finality. This includes most notably ENSIP-?.[The number of this ENSIP]
+**Living** - A special status for ENSIPs that are designed to be continually updated and not reach a state of finality. This includes most notably ENSIP-0.
 
 ## What belongs in a successful ENSIP?
 
@@ -184,7 +184,7 @@ A `requires` dependency is created when the current ENSIP cannot be understood o
 
 ## Linking to External Resources
 
-With EIPs, external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.     
+With EIPs (Ethereum Improvement Proposal), external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.     
 
 ### Execution Client Specifications
 
