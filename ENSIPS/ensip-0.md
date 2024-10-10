@@ -479,8 +479,6 @@ The current ENSIP editors are
 
 If you would like to become an ENSIP editors, please contact a current editor.
 
-Generally, ENSIP editors will be responsible for choosing new ENSIP editors.
-
 ## ENSIP Editor Responsibilities
 
 For each new ENSIP that comes in, an editor does the following:
