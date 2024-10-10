@@ -54,7 +54,7 @@ The best way to get feedback from ENS developers is to present the ENSIP at the 
 
 These calls may result in a "rough consensus" around the merits of an ENSIP, and may serve to direct authors of ENSIPs to further consult relevant parties who may be impacted, for example, wallets, or well-known dapps that implement the ENS protocol.
 
-_In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea._
+*In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
 
 ### ENSIP Process
 
@@ -78,7 +78,7 @@ A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other tha
 
 **Stagnant** - Stagnant - Any ENSIP in `Draft`, `Review`, or `Last Call` if inactive for a period of 6 months or greater is moved to `Stagnant`. An ENSIP may be resurrected from this state by Authors or ENSIP Editors through moving it back to `Draft` or its earlier status. If not resurrected, a proposal may stay forever in this status.
 
-> _ENSIP Authors are notified of any algorithmic change to the status of their ENSIP_
+> *ENSIP Authors are notified of any algorithmic change to the status of their ENSIP*
 
 **Withdrawn** - The ENSIP Author(s) have withdrawn the proposed ENSIP. This state has finality and can no longer be resurrected using this ENSIP number. If the idea is pursued at a later date, it is considered a new proposal.
 
@@ -90,12 +90,12 @@ Each ENSIP should have the following parts:
 
 - Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./ensip-0.md#eip-header-preamble) for details.
 - Abstract - The abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
-- Motivation _(optional)_ - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
+- Motivation *(optional)* - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
 - Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations including wallets and libraries.
 - Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g., how the feature is supported in other languages. The rationale should discuss important objections or concerns raised during the discussion around the ENSIP.
-- Backwards Compatibility _(optional)_ - All ENSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The ENSIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
-- Test Cases _(optional)_ - Test cases for an implementation are mandatory for ENSIPs that are affecting consensus changes. Tests should either be inlined in the ENSIP as data (such as input/expected output pairs) or included in `../assets/ensip-###/<filename>`. This section may be omitted for non-Core proposals.
-- Reference Implementation _(optional)_ - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all ENSIPs.
+- Backwards Compatibility *(optional)* - All ENSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The ENSIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
+- Test Cases *(optional)* - Test cases for an implementation are mandatory for ENSIPs that are affecting consensus changes. Tests should either be inlined in the ENSIP as data (such as input/expected output pairs) or included in `../assets/ensip-###/<filename>`. This section may be omitted for non-Core proposals.
+- Reference Implementation *(optional)* - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all ENSIPs.
 - Security Considerations - All ENSIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the lifecycle of the proposal. E.g., include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. ENSIP submissions missing the "Security Considerations" section will be rejected. An ENSIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 - Copyright Waiver - All ENSIPs must be in the public domain. The copyright waiver MUST link to the license file and use the following wording: `Copyright and related rights waived via [CC0](../LICENSE.md).`
 
@@ -107,29 +107,29 @@ ENSIPs should be written in [markdown](https://github.com/adam-p/markdown-here/w
 
 Each ENSIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style header preamble, preceded and followed by three hyphens (`---`). This header is also termed ["front matter" by Jekyll](https://jekyllrb.com/docs/front-matter/). The headers must appear in the following order:
 
-`ENSIP`: _ENSIP number_
+`ENSIP`: *ENSIP number*
 
-`title`: _The ENSIP title is a few words, not a complete sentence_
+`title`: *The ENSIP title is a few words, not a complete sentence*
 
-`description`: _Description is one full (short) sentence_
+`description`: *Description is one full (short) sentence*
 
-`author`: _The list of the author's or authors' name(s), ENS name(s), username(s), and email(s). Details are below._
+`author`: *The list of the author's or authors' name(s), ENS name(s), username(s), and email(s). Details are below.*
 
-`discussions-to`: _The URL pointing to the official discussion thread_
+`discussions-to`: *The URL pointing to the official discussion thread*
 
-`status`: _Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living_
+`status`: *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
 `last-call-deadline`: \*The date last call period ends on (Optional field, only needed when status is Last Call)
 
-`type`: _One of `Standards Track`, `Meta`, or `Informational`_
+`type`: *One of `Standards Track`, `Meta`, or `Informational`*
 
-`category`: _One of `Core` or `ERC`_ (Optional field, only needed for `Standards Track` ENSIPs)
+`category`: *One of `Core` or `ERC`* (Optional field, only needed for `Standards Track` ENSIPs)
 
-`created`: _Date the ENSIP was created on_
+`created`: *Date the ENSIP was created on*
 
-`requires`: _ENSIP number(s)_ (Optional field)
+`requires`: *ENSIP number(s)* (Optional field)
 
-`withdrawal-reason`: _A sentence explaining why the ENSIP was withdrawn._ (Optional field, only needed when status is `Withdrawn`)
+`withdrawal-reason`: *A sentence explaining why the ENSIP was withdrawn.* (Optional field, only needed when status is `Withdrawn`)
 
 Headers that permit lists must separate elements with commas.
 
