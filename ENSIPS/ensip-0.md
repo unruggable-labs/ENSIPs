@@ -46,7 +46,6 @@ Parties involved in the process are you, the champion or ENSIP author, the ENSIP
 
 Before writing a formal ENSIP, you should first vet your idea by discussing it with the ENS community to ensure originality and avoid rejection due to prior research. Opening a thread on the ENS DAO forum is recommended. Once vetted, your responsibility is to present the idea in an ENSIP Draft, inviting feedback from editors, developers, and the community. It's important to gauge interest in the ENSIP relative to the effort involved in implementing it and how many parties will need to adopt it. Negative feedback could prevent the ENSIP from advancing beyond the Draft stage.
 
-
 ### Core ENSIPs
 
 For Core ENSIPs, given that they may require upgrades to smart contracts, gateways, and client implementations to be considered Final (see "ENSIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your ENSIP.
@@ -55,7 +54,7 @@ The best way to get feedback from ENS developers is to present the ENSIP at the 
 
 These calls may result in a "rough consensus" around the merits of an ENSIP, and may serve to direct authors of ENSIPs to further consult relevant parties who may be impacted, for example, wallets, or well-known dapps that implement the ENS protocol.
 
-*In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
+_In short, your role as the champion is to write the ENSIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea._
 
 ### ENSIP Process
 
@@ -79,7 +78,7 @@ A PR moving an ENSIP from Last Call to Final SHOULD contain no changes other tha
 
 **Stagnant** - Stagnant - Any ENSIP in `Draft`, `Review`, or `Last Call` if inactive for a period of 6 months or greater is moved to `Stagnant`. An ENSIP may be resurrected from this state by Authors or ENSIP Editors through moving it back to `Draft` or its earlier status. If not resurrected, a proposal may stay forever in this status.
 
->*ENSIP Authors are notified of any algorithmic change to the status of their ENSIP*
+> _ENSIP Authors are notified of any algorithmic change to the status of their ENSIP_
 
 **Withdrawn** - The ENSIP Author(s) have withdrawn the proposed ENSIP. This state has finality and can no longer be resurrected using this ENSIP number. If the idea is pursued at a later date, it is considered a new proposal.
 
@@ -91,12 +90,12 @@ Each ENSIP should have the following parts:
 
 - Preamble - RFC 822 style headers containing metadata about the ENSIP, including the ENSIP number, a short descriptive title (limited to a maximum of 44 characters), a description (limited to a maximum of 140 characters), and the author details. Irrespective of the category, the title and description should not include the ENSIP number. See [below](./ensip-0.md#eip-header-preamble) for details.
 - Abstract - The abstract is a multi-sentence (short paragraph) technical summary. This should be a very terse and human-readable version of the specification section. Someone should be able to read only the abstract to get the gist of what this specification does.
-- Motivation *(optional)* - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
+- Motivation _(optional)_ - A motivation section is critical for ENSIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the ENSIP solves. This section may be omitted if the motivation is evident.
 - Specification - The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations including wallets and libraries.
 - Rationale - The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g., how the feature is supported in other languages. The rationale should discuss important objections or concerns raised during the discussion around the ENSIP.
-- Backwards Compatibility *(optional)* - All ENSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The ENSIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
-- Test Cases *(optional)* - Test cases for an implementation are mandatory for ENSIPs that are affecting consensus changes. Tests should either be inlined in the ENSIP as data (such as input/expected output pairs) or included in `../assets/ensip-###/<filename>`. This section may be omitted for non-Core proposals.
-- Reference Implementation *(optional)* - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all ENSIPs.
+- Backwards Compatibility _(optional)_ - All ENSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their consequences. The ENSIP must explain how the author proposes to deal with these incompatibilities. This section may be omitted if the proposal does not introduce any backwards incompatibilities, but this section must be included if backward incompatibilities exist.
+- Test Cases _(optional)_ - Test cases for an implementation are mandatory for ENSIPs that are affecting consensus changes. Tests should either be inlined in the ENSIP as data (such as input/expected output pairs) or included in `../assets/ensip-###/<filename>`. This section may be omitted for non-Core proposals.
+- Reference Implementation _(optional)_ - An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. This section may be omitted for all ENSIPs.
 - Security Considerations - All ENSIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the lifecycle of the proposal. E.g., include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. ENSIP submissions missing the "Security Considerations" section will be rejected. An ENSIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 - Copyright Waiver - All ENSIPs must be in the public domain. The copyright waiver MUST link to the license file and use the following wording: `Copyright and related rights waived via [CC0](../LICENSE.md).`
 
@@ -108,29 +107,29 @@ ENSIPs should be written in [markdown](https://github.com/adam-p/markdown-here/w
 
 Each ENSIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style header preamble, preceded and followed by three hyphens (`---`). This header is also termed ["front matter" by Jekyll](https://jekyllrb.com/docs/front-matter/). The headers must appear in the following order:
 
-`ENSIP`: *ENSIP number*
+`ENSIP`: _ENSIP number_
 
-`title`: *The ENSIP title is a few words, not a complete sentence*
+`title`: _The ENSIP title is a few words, not a complete sentence_
 
-`description`: *Description is one full (short) sentence*
+`description`: _Description is one full (short) sentence_
 
-`author`: *The list of the author's or authors' name(s), ENS name(s), username(s), and email(s). Details are below.*
+`author`: _The list of the author's or authors' name(s), ENS name(s), username(s), and email(s). Details are below._
 
-`discussions-to`: *The URL pointing to the official discussion thread*
+`discussions-to`: _The URL pointing to the official discussion thread_
 
-`status`: *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
+`status`: _Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living_
 
-`last-call-deadline`: *The date last call period ends on (Optional field, only needed when status is Last Call)
+`last-call-deadline`: \*The date last call period ends on (Optional field, only needed when status is Last Call)
 
-`type`: *One of `Standards Track`, `Meta`, or `Informational`*
+`type`: _One of `Standards Track`, `Meta`, or `Informational`_
 
-`category`: *One of `Core` or `ERC`* (Optional field, only needed for `Standards Track` ENSIPs)
+`category`: _One of `Core` or `ERC`_ (Optional field, only needed for `Standards Track` ENSIPs)
 
-`created`: *Date the ENSIP was created on*
+`created`: _Date the ENSIP was created on_
 
-`requires`: *ENSIP number(s)* (Optional field)
+`requires`: _ENSIP number(s)_ (Optional field)
 
-`withdrawal-reason`: *A sentence explaining why the ENSIP was withdrawn.* (Optional field, only needed when status is `Withdrawn`)
+`withdrawal-reason`: _A sentence explaining why the ENSIP was withdrawn._ (Optional field, only needed when status is `Withdrawn`)
 
 Headers that permit lists must separate elements with commas.
 
@@ -156,7 +155,7 @@ if the email address and/or GitHub username is included, and
 
 if neither the email address nor the GitHub username are given.
 
-At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them. All authors must have an ENS name. 
+At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them. All authors must have an ENS name.
 
 ### `discussions-to` header
 
@@ -184,7 +183,7 @@ A `requires` dependency is created when the current ENSIP cannot be understood o
 
 ## Linking to External Resources
 
-With EIPs (Ethereum Improvement Proposal), external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.     
+With EIPs (Ethereum Improvement Proposal), external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.
 
 ### Execution Client Specifications
 
@@ -439,11 +438,11 @@ The top-level URL field must resolve to a copy of the referenced document which 
 
 ## Linking to other ENSIPs
 
-References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to.  Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc.  For example, you would link to this ENSIP as `./ensip-0.md`. 
+References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to. Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references. The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc. For example, you would link to this ENSIP as `./ensip-0.md`.
 
 ## Linking to EIPs (Ethereum Improvement Proposals)
 
-References to EIPs should follow the format `ENSIP-N` where `N` is the EIP number you are referring to.  Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  
+References to EIPs should follow the format `ENSIP-N` where `N` is the EIP number you are referring to. Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.
 
 ```markdown
 [EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
@@ -475,10 +474,12 @@ If you are interested in assuming ownership of an ENSIP, send a message asking t
 The current ENSIP editors are
 
 - Nick Johnson (@Arachnid)
+- Prem Makeig (@nxt3d)
+- Steve Katzman (@stevieraykatz)
 
-If you would like to become an ENSIP editor, please contact a current editor.
+If you would like to become an ENSIP editors, please contact a current editor.
 
-Generally, ENSIP editors will be responsible for choosing new ENSIP editors; however, it is also possible for the ENS DAO to appoint ENSIP editors using a DAO-wide vote.
+Generally, ENSIP editors will be responsible for choosing new ENSIP editors.
 
 ## ENSIP Editor Responsibilities
 
@@ -492,13 +493,13 @@ If the ENSIP isn't ready, the editor will send it back to the author for revisio
 
 Once the ENSIP is ready for the repository, the ENSIP editor will:
 
-- Assign an ENSIP number (generally incremental; editors can reassign if number sniping is suspected).  
+- Assign an ENSIP number (generally incremental; editors can reassign if number sniping is suspected).
 - Merge the corresponding [pull request](link?)
 - Send a message back to the ENSIP author with the next step.
 
 Many ENSIPs are written and maintained by developers with write access to the ENS Labs codebase. The ENSIP editors monitor ENSIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
 
-The editors don't pass judgment on ENSIPs. We merely do the administrative & editorial part. 
+The editors don't pass judgment on ENSIPs. We merely do the administrative & editorial part.
 
 Unlike EIPs, however, currently ENS Labs has oversight authority over ENSIPs, and even if an ENSIP meets all the guidelines, it is not guaranteed that the ENSIP will be made final.
 
@@ -520,7 +521,7 @@ The `description` field in the preamble:
 
 ### ENSIP numbers
 
-When referring to an ENSIP with a `category` of `ENSRC`, it must be written in the hyphenated form `ENSRC-X`, where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X`, where `X` is that ENSIP's assigned number. 
+When referring to an ENSIP with a `category` of `ENSRC`, it must be written in the hyphenated form `ENSRC-X`, where `X` is that ENSIP's assigned number. When referring to ENSIPs with any other `category`, it must be written in the hyphenated form `ENSIP-X`, where `X` is that ENSIP's assigned number.
 
 ### RFC 2119 and RFC 8174
 
