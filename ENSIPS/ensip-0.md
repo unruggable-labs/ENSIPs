@@ -185,6 +185,25 @@ A `requires` dependency is created when the current ENSIP cannot be understood o
 
 With EIPs (Ethereum Improvement Proposal), external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.
 
+### EIPs (Ethereum Improvement Proposals)
+
+Links to EIPs should follow the format `EIP-N` where `N` is the EIP number you are referring to. Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.
+
+```markdown
+[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
+```
+
+Which renders to:
+
+[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
+
+Permitted Ethereum Improvement Proposal URLs must anchor to a specific commit, and so must match this regular expression:
+
+```regex
+https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md
+^(https://github.com/ethereum/EIPS/blob/[0-9a-f]{40}/eip-[0-9]+\.md)$
+```
+
 ### World Wide Web Consortium (W3C)
 
 Links to a W3C "Recommendation" status specification may be included using normal markdown syntax. For example, the following link would be allowed:
@@ -292,25 +311,6 @@ Permitted Yellow Paper URLs must anchor to a specific commit, and so must match 
 ## Linking to other ENSIPs
 
 References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to. Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references. The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc. For example, you would link to this ENSIP as `./ensip-0.md`.
-
-## Linking to EIPs (Ethereum Improvement Proposals)
-
-References to EIPs should follow the format `EIP-N` where `N` is the EIP number you are referring to. Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.
-
-```markdown
-[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
-```
-
-Which renders to:
-
-[EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
-
-Permitted Ethereum Improvement Proposal URLs must anchor to a specific commit, and so must match this regular expression:
-
-```regex
-https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md
-^(https://github.com/ethereum/EIPS/blob/[0-9a-f]{40}/eip-[0-9]+\.md)$
-```
 
 ## Auxiliary Files
 
