@@ -119,7 +119,7 @@ Each ENSIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) sty
 
 `status`: *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: \*The date last call period ends on (Optional field, only needed when status is Last Call)
+`last-call-deadline`: *The date last call period ends on (Optional field, only needed when status is Last Call)*
 
 `type`: *One of `Standards Track`, `Meta`, or `Informational`*
 
@@ -184,60 +184,6 @@ A `requires` dependency is created when the current ENSIP cannot be understood o
 ## Linking to External Resources
 
 With EIPs (Ethereum Improvement Proposal), external links are disallowed except for a predefined set which are specified, including their format in EIP-1. For ENSIPs, external links are allowed; however, external links **MUST** conform to the formats if specified in this document. Because links may become broken if the URL destinations change or disappear, extra care should be taken when including external links. For example, a link to a GitHub document should include a commit, e.g., "/blob/23234...23a74/". It is within the discretion of ENSIP editors whether to allow external links on a case-by-case basis.
-
-### Execution Client Specifications
-
-Links to the Ethereum Execution Client Specifications may be included using normal markdown syntax, such as:
-
-```markdown
-[Ethereum Execution Client Specifications](https://github.com/ethereum/execution-specs/blob/9a1f22311f517401fed6c939a159b55600c454af/README.md)
-```
-
-Which renders to:
-
-[Ethereum Execution Client Specifications](https://github.com/ethereum/execution-specs/blob/9a1f22311f517401fed6c939a159b55600c454af/README.md)
-
-Permitted Execution Client Specifications URLs must anchor to a specific commit, and so must match this regular expression:
-
-```regex
-^(https://github.com/ethereum/execution-specs/(blob|commit)/[0-9a-f]{40}/.*|https://github.com/ethereum/execution-specs/tree/[0-9a-f]{40}/.*)$
-```
-
-### Consensus Layer Specifications
-
-Links to specific commits of files within the Ethereum Consensus Layer Specifications may be included using normal markdown syntax, such as:
-
-```markdown
-[Beacon Chain](https://github.com/ethereum/consensus-specs/blob/26695a9fdb747ecbe4f0bb9812fedbc402e5e18c/specs/sharding/beacon-chain.md)
-```
-
-Which renders to:
-
-[Beacon Chain](https://github.com/ethereum/consensus-specs/blob/26695a9fdb747ecbe4f0bb9812fedbc402e5e18c/specs/sharding/beacon-chain.md)
-
-Permitted Consensus Layer Specifications URLs must anchor to a specific commit, and so must match this regular expression:
-
-```regex
-^https://github.com/ethereum/consensus-specs/(blob|commit)/[0-9a-f]{40}/.*$
-```
-
-### Networking Specifications
-
-Links to specific commits of files within the Ethereum Networking Specifications may be included using normal markdown syntax, such as:
-
-```markdown
-[Ethereum Wire Protocol](https://github.com/ethereum/devp2p/blob/40ab248bf7e017e83cc9812a4e048446709623e8/caps/eth.md)
-```
-
-Which renders as:
-
-[Ethereum Wire Protocol](https://github.com/ethereum/devp2p/blob/40ab248bf7e017e83cc9812a4e048446709623e8/caps/eth.md)
-
-Permitted Networking Specifications URLs must anchor to a specific commit, and so must match this regular expression:
-
-```regex
-^https://github.com/ethereum/devp2p/(blob|commit)/[0-9a-f]{40}/.*$
-```
 
 ### World Wide Web Consortium (W3C)
 
@@ -343,106 +289,13 @@ Permitted Yellow Paper URLs must anchor to a specific commit, and so must match 
 ^(https://github\.com/ethereum/yellowpaper/blob/[0-9a-f]{40}/paper\.pdf)$
 ```
 
-### Execution Client Specification Tests
-
-Links to the Ethereum Execution Client Specification Tests may be included using normal markdown syntax, such as:
-
-```markdown
-[Ethereum Execution Client Specification Tests](https://github.com/ethereum/execution-spec-tests/blob/d5a3188f122912e137aa2e21ed2a1403e806e424/README.md)
-```
-
-Which renders to:
-
-[Ethereum Execution Client Specification Tests](https://github.com/ethereum/execution-spec-tests/blob/d5a3188f122912e137aa2e21ed2a1403e806e424/README.md)
-
-Permitted Execution Client Specification Tests URLs must anchor to a specific commit, and so must match this regular expression:
-
-```regex
-^(https://github.com/ethereum/execution-spec-tests/(blob|commit)/[0-9a-f]{40}/.*|https://github.com/ethereum/execution-spec-tests/tree/[0-9a-f]{40}/.*)$
-```
-
-### Digital Object Identifier System
-
-Links qualified with a Digital Object Identifier (DOI) may be included using the following syntax:
-
-````markdown
-This is a sentence with a footnote.[^1]
-
-[^1]:
-    ```csl-json
-    {
-      "type": "article",
-      "id": 1,
-      "author": [
-        {
-          "family": "Jameson",
-          "given": "Hudson"
-        }
-      ],
-      "DOI": "00.0000/a00000-000-0000-y",
-      "title": "An Interesting Article",
-      "original-date": {
-        "date-parts": [
-          [2022, 12, 31]
-        ]
-      },
-      "URL": "https://sly-hub.invalid/00.0000/a00000-000-0000-y",
-      "custom": {
-        "additional-urls": [
-          "https://example.com/an-interesting-article.pdf"
-        ]
-      }
-    }
-    ```
-````
-
-Which renders to:
-
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable code-block-style -->
-
-This is a sentence with a footnote.[^1]
-
-[^1]:
-    ```csl-json
-    {
-      "type": "article",
-      "id": 1,
-      "author": [
-        {
-          "family": "Jameson",
-          "given": "Hudson"
-        }
-      ],
-      "DOI": "00.0000/a00000-000-0000-y",
-      "title": "An Interesting Article",
-      "original-date": {
-        "date-parts": [
-          [2022, 12, 31]
-        ]
-      },
-      "URL": "https://sly-hub.invalid/00.0000/a00000-000-0000-y",
-      "custom": {
-        "additional-urls": [
-          "https://example.com/an-interesting-article.pdf"
-        ]
-      }
-    }
-    ```
-
-<!-- markdownlint-restore -->
-
-See the [Citation Style Language Schema](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json) for the supported fields. In addition to passing validation against that schema, references must include a DOI and at least one URL.
-
-The top-level URL field must resolve to a copy of the referenced document which can be viewed at zero cost. Values under `additional-urls` must also resolve to a copy of the referenced document, but may charge a fee.
-
 ## Linking to other ENSIPs
 
 References to other ENSIPs should follow the format `ENSIP-N` where `N` is the ENSIP number you are referring to. Each ENSIP that is referenced in an ENSIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references. The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main ENSIPs site, mirrors of the main ENSIP site, etc. For example, you would link to this ENSIP as `./ensip-0.md`.
 
 ## Linking to EIPs (Ethereum Improvement Proposals)
 
-References to EIPs should follow the format `ENSIP-N` where `N` is the EIP number you are referring to. Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.
+References to EIPs should follow the format `EIP-N` where `N` is the EIP number you are referring to. Each EIP that is referenced in an ENSIP **MUST** be accompanied by a markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.
 
 ```markdown
 [EIP-1](https://github.com/ethereum/EIPs/blob/1127009641b872ed180a33d618d1a5f8efbe0583/EIPS/eip-1.md)
